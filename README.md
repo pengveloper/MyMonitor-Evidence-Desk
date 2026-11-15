@@ -14,7 +14,7 @@ Node.js 24와 npm, 패키지 registry 네트워크가 필요합니다. 원본 lo
 
     npm ci
     npm run build:evidence-desk
-    python3 publication/prepare.py dist-evidence-desk --source-commit "$(git rev-parse HEAD)"
+    python3 publication/prepare.py dist-evidence-desk --source-commit "$(git rev-parse HEAD)" --fresh-build
     python3 -m http.server 4187 --bind 127.0.0.1 --directory dist-evidence-desk
 
 루트 호스팅 기준: /, /index.html, /comparison.html. 하위 경로 호스팅은 지원 대상으로 추가하지 않았습니다. 위 Python 서버는 로컬 실행 안내이며 실제 공개판은 assets-only Cloudflare Workers Static Assets의 기존 경로 설정을 사용합니다. API·Worker 실행 코드·DB·secret·수집 스케줄러는 추가하지 않습니다.
@@ -50,4 +50,12 @@ WorldMonitor의 App shell, MapContainer, MapLibre/deck.gl, 검색 및 기본 화
 - 원본 source ZIP SHA256: e9b0c8bdf40741f1b294307ada012eee8f6252b40d98d9a986cf8ecd3c64d251
 - 원본 static ZIP SHA256: 7e7d90fa25212900f6e7903140f25d0fcb4d1014cd88e99b5993b501f6456c6f
 
-SOURCE_MANIFEST.json은 원본 입력과 포장 파일을 구분합니다. package.json은 기존 검증된 demo 전용 lifecycle 변환본이며 package-lock/vendor는 그대로입니다. 원본 문서의 PUBLISH_APPROVAL_PENDING은 패키지 생성 당시의 역사적 상태입니다. 이번 후속 변경은 README와 publication 안내/적용 도구뿐이며 앱 JS/CSS/worker 번들은 다시 빌드하거나 수정하지 않았습니다.
+SOURCE_MANIFEST.json은 원본 입력과 포장 파일을 구분합니다. package.json은 기존 검증된 demo 전용 lifecycle 변환본이며 package-lock/vendor는 그대로입니다. 원본 문서의 PUBLISH_APPROVAL_PENDING은 패키지 생성 당시의 역사적 상태입니다. 최초 공개는 검토된 기존 번들을 재사용했습니다. 날짜 안내와 저장 상태 수정부터는 해당 소스 커밋에서 정적 앱을 새로 빌드하며, 게시 manifest에 fresh-static-build와 runtimeBuildSourceCommit을 기록합니다.
+
+## 공개 데모 표시·저장 상태 회귀 검사
+
+자료 기준은 2026-10-05 11:00 KST로 고정됩니다. 기기 현재 시각이나 브리프 저장 시각은 관측 시각을 갱신하지 않습니다. 자료 요약과 핵심 미확인 내용을 함께 표시하며 현재 사건과 저장 사본의 안내를 각각의 보기 상태에 연결합니다. 기존 저장 기록의 날짜·내용·형식은 변경하지 않습니다.
+
+검사: `npm run test:feedback`, `npm run typecheck:feedback`, `python3 tests/publication-provenance.test.py`, `npm run build:evidence-desk`.
+
+변경 경로의 strict 타입 검사는 통과했습니다. 원본 공개 snapshot의 전체 tsconfig에는 제외된 운영 Convex/history 타입 관련 오류 12건이 있으며, 동일 설치에서 기준 snapshot과 이번 변경의 진단이 일치했습니다. 이를 전체 타입 검사 통과로 계산하지 않습니다. 이 공개 저장소에는 실행되는 CI workflow가 없습니다. WebGL 장애 경로와 실제 Fold/터치, 외부 사용자 효용은 여전히 미검증입니다.

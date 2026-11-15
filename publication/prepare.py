@@ -2,7 +2,7 @@
 """Apply publication-only notices to an existing root static demo; never rebuild JS."""
 import argparse, hashlib, json, re
 from pathlib import Path
-p=argparse.ArgumentParser();p.add_argument('output');p.add_argument('--source-commit',required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('output');p.add_argument('--source-commit',required=True);p.add_argument('--fresh-build',action='store_true');a=p.parse_args()
 assert re.fullmatch('[0-9a-f]{40}',a.source_commit), 'Exact source commit required'
 out=Path(a.output).resolve();here=Path(__file__).resolve().parent
 assert (out/'index.html').is_file() and (out/'comparison.html').is_file()
@@ -26,6 +26,6 @@ after={str(f.relative_to(out)):hashlib.sha256(f.read_bytes()).hexdigest() for f 
 changed=sorted(k for k,v in after.items() if before.get(k)!=v)
 assert all(k in ['index.html','comparison.html','README.md','publication.html','publication.css','ORIGINAL_MANIFEST.sha256.json'] for k in changed), changed
 assert all(after[k]==v for k,v in before.items() if k.startswith('assets/')), 'Runtime asset changed'
-manifest={'schemaVersion':1,'sourceRepository':'https://github.com/pengveloper/MyMonitor-Evidence-Desk','sourceCommit':a.source_commit,'originalMyMonitorRevision':'3efdb24310096a7e7aa69237fc96fb00fd4067c8','originalSourceZipSha256':'e9b0c8bdf40741f1b294307ada012eee8f6252b40d98d9a986cf8ecd3c64d251','originalStaticZipSha256':'7e7d90fa25212900f6e7903140f25d0fcb4d1014cd88e99b5993b501f6456c6f','runtimeBundlesUnchanged':True,'publicationOnlyChangedFiles':changed,'originalManifestRenamedTo':'ORIGINAL_MANIFEST.sha256.json','files':after,'knownLimitations':['MAP_COMPONENT_FAULT_QA ENVIRONMENT_BLOCKED/NOT_RUN','APP_WEBGL_FAULT_E2E NOT_RUN','Physical Fold/touch NOT_TESTED','EXTERNAL_USER_VALIDATION NOT_STARTED']}
+manifest={'schemaVersion':1,'sourceRepository':'https://github.com/pengveloper/MyMonitor-Evidence-Desk','sourceCommit':a.source_commit,'originalMyMonitorRevision':'3efdb24310096a7e7aa69237fc96fb00fd4067c8','originalSourceZipSha256':'e9b0c8bdf40741f1b294307ada012eee8f6252b40d98d9a986cf8ecd3c64d251','originalStaticZipSha256':'7e7d90fa25212900f6e7903140f25d0fcb4d1014cd88e99b5993b501f6456c6f','artifactKind':'fresh-static-build' if a.fresh_build else 'original-reviewed-static-package','runtimeBuildSourceCommit':a.source_commit if a.fresh_build else None,'runtimeBundlesUnchanged':not a.fresh_build,'publicationStepRuntimeBundlesUnchanged':True,'publicationOnlyChangedFiles':changed,'originalManifestRenamedTo':'ORIGINAL_MANIFEST.sha256.json','files':after,'knownLimitations':['MAP_COMPONENT_FAULT_QA ENVIRONMENT_BLOCKED/NOT_RUN','APP_WEBGL_FAULT_E2E NOT_RUN','Physical Fold/touch NOT_TESTED','EXTERNAL_USER_VALIDATION NOT_STARTED']}
 f=out/'PUBLICATION_MANIFEST.json';f.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'sourceCommit':a.source_commit,'files':len(after),'changed':changed,'manifestSha256':hashlib.sha256(f.read_bytes()).hexdigest()},ensure_ascii=False))
