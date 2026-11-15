@@ -1,0 +1,68 @@
+[
+  {
+    "source": "public/data/countries-110m.json",
+    "output": "data/countries-110m.json",
+    "sha256": "2516c915867c7baf18ddec727aec46c315541a07cfb3d79a6559b05d5e94eee8",
+    "license": "world-atlas-2.0.2.LICENSE.txt"
+  },
+  {
+    "source": "public/data/countries-50m.json",
+    "output": "data/countries-50m.json",
+    "sha256": "04342cdc1e3016bcd7db1630de95684d67b79fe3c8c460321e87aef469502394",
+    "license": "world-atlas-2.0.2.LICENSE.txt"
+  },
+  {
+    "source": "public/data/countries.geojson",
+    "output": "data/countries.geojson",
+    "sha256": "195417e48173736983685bd1bfce91c6a8a28a63a7fea6ffa036191f354617b1",
+    "license": "PROJECT_ASSETS.md"
+  },
+  {
+    "source": "public/data/country-boundary-overrides.geojson",
+    "output": "data/country-boundary-overrides.geojson",
+    "sha256": "aa13066e01243919eafea693a3e07135a86a8c48ad2728b8984414c950efed56",
+    "license": "PROJECT_ASSETS.md"
+  },
+  {
+    "source": "public/map-styles/happy-dark.json",
+    "output": "map-styles/happy-dark.json",
+    "sha256": "3cf34d9de501b6c7739f7248d1885a9123b09b2bbd2cfbebd93503995faae4ce",
+    "license": "PROJECT_ASSETS.md"
+  },
+  {
+    "source": "public/map-styles/happy-light.json",
+    "output": "map-styles/happy-light.json",
+    "sha256": "40a1594903fbd0feeaf181903010acbd78140a2aa83cbdd02655a05f63a52a4f",
+    "license": "PROJECT_ASSETS.md"
+  },
+  {
+    "source": "public/favicon.ico",
+    "output": "favicon.ico",
+    "sha256": "ee1f47f2e2217d0915fe67fff20cf26438dd3255f050722b7cf97b684f0e07b2",
+    "license": "PROJECT_ASSETS.md"
+  },
+  {
+    "source": "public/favico/android-chrome-96x96.png",
+    "output": "favico/android-chrome-96x96.png",
+    "sha256": "73273ff9c53ea92441fa3df518d40eaf57102fea636cf60db89640d281e0037e",
+    "license": "PROJECT_ASSETS.md"
+  },
+  {
+    "source": "public/favico/favicon-32x32.png",
+    "output": "favico/favicon-32x32.png",
+    "sha256": "0babfe75fa77f8e6feb82d83c9f7c954e481625773334c61682258991a79e3ba",
+    "license": "PROJECT_ASSETS.md"
+  },
+  {
+    "source": "public/favico/worldmonitor-icon-1024.png",
+    "output": "favico/worldmonitor-icon-1024.png",
+    "sha256": "d59900f2395ce8d0266622d251a659a5f30d4eff63893e6fd1cdc3546e175caa",
+    "license": "PROJECT_ASSETS.md"
+  },
+  {
+    "source": "demo/evidence-desk/vendor/mapbox-gl-rtl-text-0.3.0.js",
+    "output": "mapbox-gl-rtl-text.min.js",
+    "sha256": "d1c69035295613baaf83fe23fd9266b0eaed7e5e472e9632b0b5438afc3f589e",
+    "license": "mapbox-rtl-0.3.0.LICENSE.txt"
+  }
+]

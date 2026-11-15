@@ -1,0 +1,647 @@
+{
+  "dataMode": "SANITIZED_PRODUCTION_SNAPSHOT",
+  "knowledgePolicy": "SYSTEM_KNOWN_BY_CUTOFF",
+  "cutoffAt": "2026-09-22T08:39:30.568882+00:00",
+  "input": {
+    "capturedAt": "2026-09-22T07:45:04.260222+00:00",
+    "sourceKey": "private:owner-intelligence:v1:CISS:evidence:677359105dd069c3ff2673e640f63b34506cd876ee66719132929d45ca6af520",
+    "evidence": {
+      "schemaVersion": "owner-intelligence/v1",
+      "symbol": "CISS",
+      "fingerprint": "677359105dd069c3ff2673e640f63b34506cd876ee66719132929d45ca6af520",
+      "collectedAt": "2026-09-21T07:16:31.037Z",
+      "secState": "AVAILABLE",
+      "events": [
+        {
+          "id": "a2763ba9695dcd61bb2a0efcba3aaa70f6a0d398a34e0d76e94a1f0617b9ba30",
+          "title": "424B3: ATM Facility",
+          "titleKo": "424B3: ATM 시설",
+          "translation": "SUCCESS",
+          "publishedAt": "2026-08-27T12:16:55.000Z",
+          "sources": [
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369646/0001193125-26-369646-index.htm",
+              "name": "sec_edgar",
+              "primary": true
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369643/0001193125-26-369643-index.htm",
+              "name": "sec_edgar",
+              "primary": true
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369642/0001193125-26-369642-index.htm",
+              "name": "sec_edgar",
+              "primary": true
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369641/0001193125-26-369641-index.htm",
+              "name": "sec_edgar",
+              "primary": true
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369639/0001193125-26-369639-index.htm",
+              "name": "sec_edgar",
+              "primary": true
+            }
+          ],
+          "duplicateCount": 25,
+          "kind": "SEC",
+          "form": "424B3",
+          "excerpt": "ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued in the Company&#8217;s underwritten public offering consummated on July 28, 2026 had been fully exercise / increase of 321.4% compared to $2.8 million for the three months ended June 30, 2025. &#149; In July 2026, the Company completed a public offering of units resulting in gross proceeds of $6.0 million. Each unit consisted of one share of our common stock and one Class F Warrant, all of which were subsequently exercised. Secon / filed with the Securities and Exchange Commission on April 22, 2026. During six months ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued / of our common stock (&#8220;Common Shares&#8221;) outstanding, as well as: &#149; 6,136,475 Common Shares issuable upon conversion of the 600,000 shares of Series A Convertible Preferred Stock which are convertible into our Common Shares at a conversion price currently equal to $2.4444. The conversion price will be further adjusted to the lowest price of issuance of Common Shares by the Company in any registered o / ents, or pursuant to a zero cash exercise option for no consideration. &#149; 2,607,488 Common Shares issuable upon the exercise of outstanding Class B-2 Warrants with an exercise price of $2.4444 per share, subject to adjustment upon the occurrence of certain events. &#149; 15,728 Common Shares issuable upon the exercise of outstanding Class C-1 Warrants with an exercise price of $2.4444 per share, subject to adjustment upon the occurrence of certain events, or pursuant / ncial and operating results for the three and six months ended June 30, 2026. Shares Outstanding As of August 26, 2026, we had 1,487,970 shares of our common stock (&#8220;Common Shares&#8221;) outstanding, as well as: &#149; 6,136,475 Common Shares issuable upon conversion of the 600,000 shares of Series A Convertible Preferred Stock which are convertible into our Common Shares at / ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued in the Company&#8217;s underwritten public offering consummated on July 28, 2026 had been fully exercise / increase of 321.4% compared to $2.8 million for the three months ended June 30, 2025. &#149; In July 2026, the Company completed a public offering of units resulting in gross proceeds of $6.0 million. Each unit consisted of one share of our common stock and one Class F Warrant, all of which were subsequently exercised. Secon / filed with the Securities and Exchange Commission on April 22, 2026. During six months ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 milli",
+          "tags": [
+            "ATM_ACTIVE",
+            "NEW_SHARE_SUPPLY",
+            "OFFERING",
+            "DILUTION",
+            "PREFERRED_CONVERSION_OVERHANG",
+            "WARRANT_EXERCISE",
+            "SHARES_OUTSTANDING_CHANGE"
+          ],
+          "scope": "DIRECT"
+        }
+      ]
+    },
+    "receipt": {
+      "bundleId": "677359105dd069c3ff2673e640f63b34506cd876ee66719132929d45ca6af520",
+      "contentHash": "f938d53c882c582df4724127b1f950be349f866e21e026a18648e81df1a5beff",
+      "firstSeenAt": "2026-09-22T07:45:04.260222+00:00",
+      "revisionKnownAt": "2026-09-22T07:45:04.260222+00:00"
+    }
+  },
+  "contentHash": "f938d53c882c582df4724127b1f950be349f866e21e026a18648e81df1a5beff",
+  "materialFingerprint": "6b7b8c045afa74a80654c8d082775cf8809309eca5d3ff0a536dfe0b04ed0199",
+  "state": "STALE",
+  "eligibility": "EVIDENCE_ONLY",
+  "reason": "RETAINED_FACT_NOT_CURRENT_COVERAGE",
+  "secProvenance": {
+    "input": {
+      "capturedAt": "2026-09-22T08:39:30.568882+00:00",
+      "sourceKey": "owner:sec-evidence:v1:CISS:last-confirmed",
+      "evidence": {
+        "cik": "0001951067",
+        "discoveredAtMs": 1790051915374,
+        "signals": [
+          {
+            "type": "ATM Facility",
+            "title": "424B3: ATM Facility",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369646/0001193125-26-369646-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787833015000,
+            "strength": "Strong",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369646",
+            "evidenceExcerpt": "ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued in the Company&#8217;s underwritten public offering consummated on July 28, 2026 had been fully exercise",
+            "evidenceTags": [
+              "ATM_ACTIVE",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Offering Evidence",
+            "title": "424B3: Offering Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369646/0001193125-26-369646-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787833015000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369646",
+            "evidenceExcerpt": "increase of 321.4% compared to $2.8 million for the three months ended June 30, 2025. &#149; In July 2026, the Company completed a public offering of units resulting in gross proceeds of $6.0 million. Each unit consisted of one share of our common stock and one Class F Warrant, all of which were subsequently exercised. Secon",
+            "evidenceTags": [
+              "OFFERING",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Dilution Evidence",
+            "title": "424B3: Dilution Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369646/0001193125-26-369646-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787833015000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369646",
+            "evidenceExcerpt": "filed with the Securities and Exchange Commission on April 22, 2026. During six months ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued",
+            "evidenceTags": [
+              "DILUTION",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Preferred Conversion Evidence",
+            "title": "424B3: Preferred Conversion Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369646/0001193125-26-369646-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787833015000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369646",
+            "evidenceExcerpt": "of our common stock (&#8220;Common Shares&#8221;) outstanding, as well as: &#149; 6,136,475 Common Shares issuable upon conversion of the 600,000 shares of Series A Convertible Preferred Stock which are convertible into our Common Shares at a conversion price currently equal to $2.4444. The conversion price will be further adjusted to the lowest price of issuance of Common Shares by the Company in any registered o",
+            "evidenceTags": [
+              "PREFERRED_CONVERSION_OVERHANG",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Warrant Exercise Evidence",
+            "title": "424B3: Warrant Exercise Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369646/0001193125-26-369646-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787833015000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369646",
+            "evidenceExcerpt": "ents, or pursuant to a zero cash exercise option for no consideration. &#149; 2,607,488 Common Shares issuable upon the exercise of outstanding Class B-2 Warrants with an exercise price of $2.4444 per share, subject to adjustment upon the occurrence of certain events. &#149; 15,728 Common Shares issuable upon the exercise of outstanding Class C-1 Warrants with an exercise price of $2.4444 per share, subject to adjustment upon the occurrence of certain events, or pursuant",
+            "evidenceTags": [
+              "WARRANT_EXERCISE",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Shares Outstanding Change",
+            "title": "424B3: Shares Outstanding Change",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369646/0001193125-26-369646-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787833015000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369646",
+            "evidenceExcerpt": "ncial and operating results for the three and six months ended June 30, 2026. Shares Outstanding As of August 26, 2026, we had 1,487,970 shares of our common stock (&#8220;Common Shares&#8221;) outstanding, as well as: &#149; 6,136,475 Common Shares issuable upon conversion of the 600,000 shares of Series A Convertible Preferred Stock which are convertible into our Common Shares at",
+            "evidenceTags": [
+              "SHARES_OUTSTANDING_CHANGE"
+            ]
+          },
+          {
+            "type": "ATM Facility",
+            "title": "424B3: ATM Facility",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369643/0001193125-26-369643-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832939000,
+            "strength": "Strong",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369643",
+            "evidenceExcerpt": "ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued in the Company&#8217;s underwritten public offering consummated on July 28, 2026 had been fully exercise",
+            "evidenceTags": [
+              "ATM_ACTIVE",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Offering Evidence",
+            "title": "424B3: Offering Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369643/0001193125-26-369643-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832939000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369643",
+            "evidenceExcerpt": "increase of 321.4% compared to $2.8 million for the three months ended June 30, 2025. &#149; In July 2026, the Company completed a public offering of units resulting in gross proceeds of $6.0 million. Each unit consisted of one share of our common stock and one Class F Warrant, all of which were subsequently exercised. Secon",
+            "evidenceTags": [
+              "OFFERING",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Dilution Evidence",
+            "title": "424B3: Dilution Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369643/0001193125-26-369643-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832939000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369643",
+            "evidenceExcerpt": "filed with the Securities and Exchange Commission on April 22, 2026. During six months ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued",
+            "evidenceTags": [
+              "DILUTION",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Preferred Conversion Evidence",
+            "title": "424B3: Preferred Conversion Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369643/0001193125-26-369643-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832939000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369643",
+            "evidenceExcerpt": "of our common stock (&#8220;Common Shares&#8221;) outstanding, as well as: &#149; 6,136,475 Common Shares issuable upon conversion of the 600,000 shares of Series A Convertible Preferred Stock which are convertible into our Common Shares at a conversion price currently equal to $2.4444. The conversion price will be further adjusted to the lowest price of issuance of Common Shares by the Company in any registered o",
+            "evidenceTags": [
+              "PREFERRED_CONVERSION_OVERHANG",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Warrant Exercise Evidence",
+            "title": "424B3: Warrant Exercise Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369643/0001193125-26-369643-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832939000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369643",
+            "evidenceExcerpt": "ents, or pursuant to a zero cash exercise option for no consideration. &#149; 2,607,488 Common Shares issuable upon the exercise of outstanding Class B-2 Warrants with an exercise price of $2.4444 per share, subject to adjustment upon the occurrence of certain events. &#149; 15,728 Common Shares issuable upon the exercise of outstanding Class C-1 Warrants with an exercise price of $2.4444 per share, subject to adjustment upon the occurrence of certain events, or pursuant",
+            "evidenceTags": [
+              "WARRANT_EXERCISE",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Shares Outstanding Change",
+            "title": "424B3: Shares Outstanding Change",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369643/0001193125-26-369643-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832939000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369643",
+            "evidenceExcerpt": "ncial and operating results for the three and six months ended June 30, 2026. Shares Outstanding As of August 26, 2026, we had 1,487,970 shares of our common stock (&#8220;Common Shares&#8221;) outstanding, as well as: &#149; 6,136,475 Common Shares issuable upon conversion of the 600,000 shares of Series A Convertible Preferred Stock which are convertible into our Common Shares at",
+            "evidenceTags": [
+              "SHARES_OUTSTANDING_CHANGE"
+            ]
+          },
+          {
+            "type": "ATM Facility",
+            "title": "424B3: ATM Facility",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369642/0001193125-26-369642-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832845000,
+            "strength": "Strong",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369642",
+            "evidenceExcerpt": "ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued in the Company&#8217;s underwritten public offering consummated on July 28, 2026 had been fully exercise",
+            "evidenceTags": [
+              "ATM_ACTIVE",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Offering Evidence",
+            "title": "424B3: Offering Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369642/0001193125-26-369642-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832845000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369642",
+            "evidenceExcerpt": "increase of 321.4% compared to $2.8 million for the three months ended June 30, 2025. &#149; In July 2026, the Company completed a public offering of units resulting in gross proceeds of $6.0 million. Each unit consisted of one share of our common stock and one Class F Warrant, all of which were subsequently exercised. Secon",
+            "evidenceTags": [
+              "OFFERING",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Dilution Evidence",
+            "title": "424B3: Dilution Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369642/0001193125-26-369642-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832845000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369642",
+            "evidenceExcerpt": "filed with the Securities and Exchange Commission on April 22, 2026. During six months ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued",
+            "evidenceTags": [
+              "DILUTION",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Preferred Conversion Evidence",
+            "title": "424B3: Preferred Conversion Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369642/0001193125-26-369642-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832845000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369642",
+            "evidenceExcerpt": "of our common stock (&#8220;Common Shares&#8221;) outstanding, as well as: &#149; 6,136,475 Common Shares issuable upon conversion of the 600,000 shares of Series A Convertible Preferred Stock which are convertible into our Common Shares at a conversion price currently equal to $2.4444. The conversion price will be further adjusted to the lowest price of issuance of Common Shares by the Company in any registered o",
+            "evidenceTags": [
+              "PREFERRED_CONVERSION_OVERHANG",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Warrant Exercise Evidence",
+            "title": "424B3: Warrant Exercise Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369642/0001193125-26-369642-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832845000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369642",
+            "evidenceExcerpt": "ents, or pursuant to a zero cash exercise option for no consideration. &#149; 2,607,488 Common Shares issuable upon the exercise of outstanding Class B-2 Warrants with an exercise price of $2.4444 per share, subject to adjustment upon the occurrence of certain events. &#149; 15,728 Common Shares issuable upon the exercise of outstanding Class C-1 Warrants with an exercise price of $2.4444 per share, subject to adjustment upon the occurrence of certain events, or pursuant",
+            "evidenceTags": [
+              "WARRANT_EXERCISE",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Shares Outstanding Change",
+            "title": "424B3: Shares Outstanding Change",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369642/0001193125-26-369642-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832845000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369642",
+            "evidenceExcerpt": "ncial and operating results for the three and six months ended June 30, 2026. Shares Outstanding As of August 26, 2026, we had 1,487,970 shares of our common stock (&#8220;Common Shares&#8221;) outstanding, as well as: &#149; 6,136,475 Common Shares issuable upon conversion of the 600,000 shares of Series A Convertible Preferred Stock which are convertible into our Common Shares at",
+            "evidenceTags": [
+              "SHARES_OUTSTANDING_CHANGE"
+            ]
+          },
+          {
+            "type": "ATM Facility",
+            "title": "424B3: ATM Facility",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369641/0001193125-26-369641-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832778000,
+            "strength": "Strong",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369641",
+            "evidenceExcerpt": "ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued in the Company&#8217;s underwritten public offering consummated on July 28, 2026 had been fully exercise",
+            "evidenceTags": [
+              "ATM_ACTIVE",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Offering Evidence",
+            "title": "424B3: Offering Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369641/0001193125-26-369641-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832778000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369641",
+            "evidenceExcerpt": "increase of 321.4% compared to $2.8 million for the three months ended June 30, 2025. &#149; In July 2026, the Company completed a public offering of units resulting in gross proceeds of $6.0 million. Each unit consisted of one share of our common stock and one Class F Warrant, all of which were subsequently exercised. Secon",
+            "evidenceTags": [
+              "OFFERING",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Dilution Evidence",
+            "title": "424B3: Dilution Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369641/0001193125-26-369641-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832778000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369641",
+            "evidenceExcerpt": "filed with the Securities and Exchange Commission on April 22, 2026. During six months ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued",
+            "evidenceTags": [
+              "DILUTION",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Preferred Conversion Evidence",
+            "title": "424B3: Preferred Conversion Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369641/0001193125-26-369641-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832778000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369641",
+            "evidenceExcerpt": "of our common stock (&#8220;Common Shares&#8221;) outstanding, as well as: &#149; 6,136,475 Common Shares issuable upon conversion of the 600,000 shares of Series A Convertible Preferred Stock which are convertible into our Common Shares at a conversion price currently equal to $2.4444. The conversion price will be further adjusted to the lowest price of issuance of Common Shares by the Company in any registered o",
+            "evidenceTags": [
+              "PREFERRED_CONVERSION_OVERHANG",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Warrant Exercise Evidence",
+            "title": "424B3: Warrant Exercise Evidence",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369641/0001193125-26-369641-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832778000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369641",
+            "evidenceExcerpt": "ents, or pursuant to a zero cash exercise option for no consideration. &#149; 2,607,488 Common Shares issuable upon the exercise of outstanding Class B-2 Warrants with an exercise price of $2.4444 per share, subject to adjustment upon the occurrence of certain events. &#149; 15,728 Common Shares issuable upon the exercise of outstanding Class C-1 Warrants with an exercise price of $2.4444 per share, subject to adjustment upon the occurrence of certain events, or pursuant",
+            "evidenceTags": [
+              "WARRANT_EXERCISE",
+              "NEW_SHARE_SUPPLY"
+            ]
+          },
+          {
+            "type": "Shares Outstanding Change",
+            "title": "424B3: Shares Outstanding Change",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369641/0001193125-26-369641-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832778000,
+            "strength": "Moderate",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369641",
+            "evidenceExcerpt": "ncial and operating results for the three and six months ended June 30, 2026. Shares Outstanding As of August 26, 2026, we had 1,487,970 shares of our common stock (&#8220;Common Shares&#8221;) outstanding, as well as: &#149; 6,136,475 Common Shares issuable upon conversion of the 600,000 shares of Series A Convertible Preferred Stock which are convertible into our Common Shares at",
+            "evidenceTags": [
+              "SHARES_OUTSTANDING_CHANGE"
+            ]
+          },
+          {
+            "type": "ATM Facility",
+            "title": "424B3: ATM Facility",
+            "url": "https://www.sec.gov/Archives/edgar/data/1951067/000119312526369639/0001193125-26-369639-index.htm",
+            "source": "sec_edgar",
+            "sourceTier": 1,
+            "timestampMs": 1787832688000,
+            "strength": "Strong",
+            "form": "424B3",
+            "accessionNumber": "0001193125-26-369639",
+            "evidenceExcerpt": "ended June 30, 2026, the Company issued 15,113 shares of common stock resulting in total gross proceeds of $2.6 million under its At-the-Market (ATM) issuance sales agreement. As of August 26, 2026, all prefunded warrants and Class F Warrants issued in the Company&#8217;s underwritten public offering consummated on July 28, 2026 had been fully exercise",
+            "evidenceTags": [
+              "ATM_ACTIVE",
+              "NEW_SHARE_SUPPLY"
+            ]
+          }
+        ]
+      },
+      "receipt": {
+        "bundleId": "a2763ba9695dcd61bb2a0efcba3aaa70f6a0d398a34e0d76e94a1f0617b9ba30",
+        "contentHash": "1e8e05d77787a53a8fe129898364d91bde643b507e9f56faa33b4fe5e3064d26",
+        "firstSeenAt": "2026-09-22T08:39:30.568882+00:00",
+        "revisionKnownAt": "2026-09-22T08:39:30.568882+00:00"
+      }
+    },
+    "contentHash": "1e8e05d77787a53a8fe129898364d91bde643b507e9f56faa33b4fe5e3064d26",
+    "materialFingerprint": "10ee2c4716d94f215fb8d00da5b60c116d0bc2f8e66c58bf70aa1047462fb2ed",
+    "state": "STALE",
+    "level": "REPLAY_MATCH",
+    "reason": "LATER_READBACK_MATCH_NOT_HISTORICAL_RECEIPT"
+  },
+  "fxReference": {
+    "dataMode": "SANITIZED_PRODUCTION_SNAPSHOT",
+    "knowledgePolicy": "SYSTEM_KNOWN_BY_CUTOFF",
+    "cutoffAt": "2026-09-22T09:54:43Z",
+    "input": {
+      "capturedAt": "2026-09-22T09:54:43Z",
+      "sourceKey": "owner:fx:ecb-reference:last-good:v1",
+      "storagePath": "LAST_GOOD",
+      "currentKeyState": "MISSING",
+      "receiptScope": "EXTRACTION_ONLY",
+      "inspectionByteHash": "6925ea5ff6cf743417222831f4f227b4fa8008610417674beb338e1bfe29bfb2",
+      "evidence": {
+        "rate": 1372.1758050478677,
+        "observedAt": "2026-09-21",
+        "fetchedAt": "2026-09-22T04:45:17.444Z",
+        "source": "ECB 일간 기준환율",
+        "url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
+        "basis": "같은 관측일 EUR/KRW ÷ EUR/USD · 가격 이해용 참고 환산이며 실시간 호가·실제 환전율이 아닙니다."
+      },
+      "receipt": {
+        "bundleId": "redis-read:6925ea5ff6cf743417222831f4f227b4fa8008610417674beb338e1bfe29bfb2",
+        "contentHash": "6925ea5ff6cf743417222831f4f227b4fa8008610417674beb338e1bfe29bfb2",
+        "firstSeenAt": "2026-09-22T09:54:43Z",
+        "revisionKnownAt": "2026-09-22T09:54:43Z"
+      }
+    },
+    "contentHash": "6925ea5ff6cf743417222831f4f227b4fa8008610417674beb338e1bfe29bfb2",
+    "materialFingerprint": "ebec58aa66c01e009ecb002bf739b9f1bdc7c35ad3af88a407f40f07dafd0713",
+    "state": "AVAILABLE",
+    "eligibility": "EVIDENCE_ONLY",
+    "reason": "LATEST_REFERENCE_FROM_LAST_GOOD",
+    "provenanceLevel": "DERIVED_REFERENCE_ONLY_RAW_LEGS_NOT_STORED"
+  },
+  "quoteReference": {
+    "dataMode": "SANITIZED_PRODUCTION_SNAPSHOT",
+    "knowledgePolicy": "SYSTEM_KNOWN_BY_CUTOFF",
+    "cutoffAt": "2026-09-22T10:52:03.789Z",
+    "input": {
+      "capturedAt": "2026-09-22T10:52:03.789Z",
+      "sourceKey": "private:owner-intelligence:v1:SOXL",
+      "receiptScope": "EXTRACTION_ONLY",
+      "evidence": {
+        "schemaVersion": "owner-intelligence/v1",
+        "symbol": "SOXL",
+        "collectedAt": "2026-09-22T04:47:29.784Z",
+        "market": {
+          "technicalObservedAt": "2026-09-21",
+          "priceBasis": "DELAYED",
+          "delayedMinutes": 20,
+          "fetchedAt": "2026-09-22T04:47:27.271Z",
+          "analysisId": "owner:v1:fc900fad2de65d10fba068fc3cb9d4d1aeb2860cd5729fae067416c6dc829b2b",
+          "price": 141.93,
+          "changePercent": 14.7651,
+          "currency": "USD",
+          "observedAt": "2026-09-21T20:29:00.000Z",
+          "provider": "eodhd",
+          "state": "STALE",
+          "session": "CLOSED",
+          "intradayUsable": false,
+          "timingLabel": "휴장·거래시간 외 · 20분 지연 시세 · 오래된 관측 · 무거래와 공급자 장애는 별도 확인",
+          "ma20": 115.07,
+          "rsi": 62,
+          "macd": 6.9438,
+          "support": [
+            115.07
+          ],
+          "resistance": [
+            144
+          ]
+        },
+        "dependencies": {
+          "market": "a3b2e66bfb56b5a6711df408f1c40aa5a254a1bd76ed8fec2dc6d31e0582d7df"
+        }
+      },
+      "receipt": {
+        "bundleId": "market:a3b2e66bfb56b5a6711df408f1c40aa5a254a1bd76ed8fec2dc6d31e0582d7df",
+        "contentHash": "44ae7309358270a2ca36fd6833c489188705619eb7da0ee7b25c238da9336061",
+        "firstSeenAt": "2026-09-22T10:52:03.789Z",
+        "revisionKnownAt": "2026-09-22T10:52:03.789Z"
+      }
+    },
+    "contentHash": "44ae7309358270a2ca36fd6833c489188705619eb7da0ee7b25c238da9336061",
+    "materialFingerprint": "a3b2e66bfb56b5a6711df408f1c40aa5a254a1bd76ed8fec2dc6d31e0582d7df",
+    "state": "STALE",
+    "eligibility": "EVIDENCE_ONLY",
+    "reason": "CANONICAL_QUOTE_STALE",
+    "provenanceLevel": "CANONICAL_MARKET_PROJECTION_HISTORY_NOT_STORED",
+    "coverage": {
+      "previousClose": "NOT_STORED",
+      "comparisonBasis": "NOT_STORED",
+      "dailyHistory": "NOT_STORED",
+      "adjustmentStatus": "UNKNOWN",
+      "sourceUrl": "NOT_STORED"
+    }
+  },
+  "macroReference": {
+    "dataMode": "SANITIZED_PRODUCTION_SNAPSHOT",
+    "knowledgePolicy": "SYSTEM_KNOWN_BY_CUTOFF",
+    "cutoffAt": "2026-09-22T12:08:59.372Z",
+    "input": {
+      "capturedAt": "2026-09-22T12:08:59.372Z",
+      "sourceKey": "economic:fred:v1:DGS10:0",
+      "metaKey": "seed-meta:economic:fred:v1:DGS10:0",
+      "receiptScope": "EXTRACTION_ONLY",
+      "evidence": {
+        "series": {
+          "seriesId": "DGS10",
+          "title": "Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity, Quoted on an Investment Basis",
+          "units": "Percent",
+          "frequency": "Daily",
+          "observations": [
+            {
+              "date": "2026-09-18",
+              "value": 5.01
+            }
+          ]
+        }
+      },
+      "seedMeta": null,
+      "receipt": {
+        "bundleId": "fred:1375c77ecdaf6325ddbf7f8426af01803a83b9506c9e26044ce8356d8d85c12d",
+        "contentHash": "8aac69d5c21ea5bd7a7b2347f948130b4178669f52466075e18dfda507a5dd73",
+        "firstSeenAt": "2026-09-22T12:08:59.372Z",
+        "revisionKnownAt": "2026-09-22T12:08:59.372Z"
+      }
+    },
+    "contentHash": "8aac69d5c21ea5bd7a7b2347f948130b4178669f52466075e18dfda507a5dd73",
+    "materialFingerprint": "1375c77ecdaf6325ddbf7f8426af01803a83b9506c9e26044ce8356d8d85c12d",
+    "state": "STALE",
+    "eligibility": "EVIDENCE_ONLY",
+    "reason": "CANONICAL_FRED_SEED_META_NOT_CAPTURED",
+    "provenanceLevel": "CURRENT_READBACK_OF_HISTORICAL_OBSERVATION",
+    "transportFreshness": "SEED_META_UNAVAILABLE",
+    "observationFreshness": "LATEST_STORED_NOT_REALTIME",
+    "observation": {
+      "date": "2026-09-18",
+      "value": 5.01,
+      "unit": "Percent"
+    },
+    "coverage": {
+      "publicationTime": "NOT_STORED",
+      "firstObservedAt": "NOT_STORED",
+      "vintageIdentity": "NOT_STORED",
+      "realtimeStart": "NOT_STORED",
+      "realtimeEnd": "NOT_STORED",
+      "immutableRawReceipt": "NOT_STORED",
+      "sourceUrl": "NOT_STORED",
+      "fallbackState": "NOT_STORED",
+      "holidayAwareObservationFreshness": "NOT_STORED"
+    }
+  }
+}

@@ -1,0 +1,400 @@
+/*
+ * MyMonitor Control Room mobile reading flow.
+ *
+ * This file is deliberately scoped to the personal deployment shell. The
+ * upstream WorldMonitor variants keep their existing map-first mobile UI.
+ * It is imported after the layered base styles so these rules can remove the
+ * legacy 250px panel floor and viewport-height map reservation without adding
+ * specificity to the shared dashboard CSS.
+ */
+
+@media (max-width: 640px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .main-content.personal-control-room {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0 0 calc(70px + env(safe-area-inset-bottom, 0px));
+    overflow-x: clip;
+    overflow-y: auto;
+    overscroll-behavior-x: none;
+    scroll-padding-block-end: calc(82px + env(safe-area-inset-bottom, 0px));
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .personal-control-room :where(
+    .control-room-briefing,
+    .control-room-hero,
+    .control-room-now-rail,
+    .control-room-dashboard,
+    .situation-briefing,
+    .situation-synthesis,
+    [data-briefing-category],
+    [data-next-check],
+    .global-radar,
+    .global-radar__mobile,
+    .global-radar__feed,
+    .global-radar-section,
+    .global-radar-card,
+    .panels-grid,
+    .panel
+  ) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* The hero is a two-column visual grouping on desktop. On a phone its
+     children join the main reading flow so the compact rail can precede the
+     dashboard while the map preview can come last. */
+  .personal-control-room .control-room-hero {
+    display: contents;
+  }
+
+  .personal-control-room .control-room-briefing {
+    order: 1;
+  }
+
+  .personal-control-room .control-room-now-rail {
+    order: 2;
+    padding-inline: 12px;
+  }
+
+  .personal-control-room .control-room-dashboard {
+    order: 3;
+    border-inline: 0;
+  }
+
+  .personal-control-room .map-section,
+  .personal-control-room .control-room-map-preview {
+    order: 4;
+  }
+
+  /* Briefing order: synthesis -> since last check -> important changes ->
+     next checks. The view can opt into the explicit data-role hooks without
+     coupling CSS to translated headings. */
+  .personal-control-room :where(.situation-briefing, .situation-synthesis) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .personal-control-room :where(
+    [data-briefing-section='summary'],
+    [data-synthesis-summary]
+  ) {
+    order: 1;
+  }
+
+  .personal-control-room :where(
+    [data-briefing-section='since-last-check'],
+    [data-since-last-check]
+  ) {
+    order: 2;
+  }
+
+  .personal-control-room :where(
+    [data-briefing-section='important-changes'],
+    [data-important-changes]
+  ) {
+    order: 3;
+  }
+
+  .personal-control-room :where(
+    [data-briefing-section='next-checks'],
+    [data-next-checks]
+  ) {
+    order: 4;
+  }
+
+  .personal-control-room .situation-briefing__categories {
+    order: 5;
+  }
+
+  .personal-control-room :where(
+    .situation-briefing,
+    .situation-synthesis,
+    [data-briefing-category],
+    [data-next-check]
+  ) {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  /* Compact cards remain readable with one hand. Internal columns and action
+     bars collapse to a single full-width track at 390px. */
+  .personal-control-room :where(
+    .situation-briefing__grid,
+    .situation-synthesis__grid,
+    .situation-synthesis__details,
+    .briefing-category-grid,
+    .next-checks,
+    [data-next-checks]
+  ) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  /* The phone is a decision feed, not a shrunk desktop taxonomy. Surface the
+     requested snapshot/news/watchlist path first; the remaining intelligence
+     categories follow as the deeper control-room layer. */
+  .personal-control-room [data-briefing-category] {
+    order: 40;
+  }
+
+  .personal-control-room [data-briefing-category='MARKET'] {
+    order: 10;
+  }
+
+  .personal-control-room [data-briefing-category='WORLD'] {
+    order: 20;
+  }
+
+  .personal-control-room [data-briefing-category='WATCHLIST'] {
+    order: 30;
+  }
+
+  .personal-control-room :where(
+    [data-briefing-category],
+    [data-next-check],
+    .situation-synthesis__summary,
+    .situation-synthesis__detail
+  ) {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  /* Native disclosure controls stay reachable after opening long detail. */
+  .personal-control-room :where(
+    .situation-briefing,
+    .situation-synthesis,
+    [data-briefing-category],
+    [data-next-check],
+    .control-room-research-hub,
+    .control-room-status-details
+  ) > details > summary,
+  .personal-control-room details:where(
+    .situation-briefing__details,
+    .situation-synthesis__details,
+    .briefing-category__details,
+    .next-check__details,
+    .control-room-research-hub,
+    .control-room-status-details
+  ) > summary {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 10px;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  .personal-control-room details:where(
+    .situation-briefing__details,
+    .situation-synthesis__details,
+    .briefing-category__details,
+    .next-check__details,
+    .control-room-research-hub,
+    .control-room-status-details
+  )[open] > summary {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--panel-bg, var(--surface, #12181f));
+  }
+
+  .personal-control-room :where(
+    button,
+    [role='button'],
+    .global-radar__action,
+    .global-radar__map-button,
+    .global-radar__tab,
+    .intelligence-briefing__action,
+    [data-open-control-room-map]
+  ) {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  .personal-control-room :where(
+    .global-radar-card__actions,
+    .global-radar__mobile-actions,
+    .global-radar__section-actions,
+    .intelligence-briefing__actions,
+    .situation-briefing__actions,
+    .situation-synthesis__actions,
+    .next-check__actions
+  ) > :where(button, a, [role='button']) {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* URL/protocol/source strings may be unbroken. They must wrap within a card
+     rather than widening the document. */
+  .personal-control-room :where(
+    a,
+    code,
+    pre,
+    time,
+    .global-radar__source,
+    .global-radar__source-link,
+    .global-radar__source-name,
+    .global-radar__availability-note,
+    .panel-status-detail,
+    [data-status-detail]
+  ) {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .personal-control-room pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+  }
+
+  /* The dashboard becomes an ordinary document flow on mobile. Removing the
+     desktop/legacy fixed row floors avoids 250-600px empty unavailable cards. */
+  .personal-control-room .panels-grid {
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+    padding: 8px 12px;
+    overflow: visible;
+  }
+
+  .personal-control-room .panels-grid > .panel,
+  .personal-control-room .panels-grid > .panel:is(
+    .panel-wide,
+    .span-1,
+    .span-2,
+    .span-3,
+    .span-4,
+    .resized
+  ) {
+    flex: 0 0 auto;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    grid-row: auto !important;
+    grid-column: auto !important;
+    contain: none;
+  }
+
+  .personal-control-room .panel-content {
+    min-width: 0;
+    max-height: min(62dvh, 520px);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .personal-control-room :where(
+    .panel-empty,
+    .panel-unavailable,
+    .panel-loading,
+    .panel-error-state,
+    .panel-status,
+    [data-panel-state='empty'],
+    [data-panel-state='unavailable'],
+    [data-panel-state='loading'],
+    [data-panel-state='stale']
+  ) {
+    min-height: 0;
+    padding-block: 12px;
+  }
+
+  .personal-control-room :where(.panel-loading, .panel-error-state) .panel-loading-radar {
+    display: none;
+  }
+
+  /* The map has no viewport-height reservation in the reading feed. Its
+     compact preview opens the existing fullscreen map interaction. */
+  .personal-control-room .control-room-map-preview {
+    display: grid;
+    width: calc(100% - 24px);
+    gap: 8px;
+    margin: 8px 12px 12px;
+    padding: 12px;
+    border: 1px solid var(--border, #36414b);
+    border-radius: 12px;
+    background: var(--panel-bg, var(--surface, #12181f));
+  }
+
+  .personal-control-room [data-open-control-room-map] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+  }
+
+  .personal-control-room .control-room-hero > .map-section:not(.live-news-fullscreen) {
+    width: calc(100% - 24px);
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 8px 12px 12px;
+  }
+
+  .personal-control-room .map-section.collapsed:not(.live-news-fullscreen) {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .personal-control-room .map-section.live-news-fullscreen {
+    position: fixed;
+    inset: 0 0 calc(58px + env(safe-area-inset-bottom, 0px));
+    z-index: 10002;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0;
+    overscroll-behavior: contain;
+  }
+
+  .personal-control-room .map-section.live-news-fullscreen :where(
+    .map-container,
+    .map-wrapper,
+    .deckgl-map-wrapper,
+    .maplibregl-canvas-container,
+    .maplibregl-canvas
+  ) {
+    touch-action: none;
+    overscroll-behavior: contain;
+  }
+
+  .personal-control-room .map-section.live-news-fullscreen :where(
+    .map-pin-btn,
+    .map-collapse-btn,
+    .popup-close
+  ) {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* One bottom safe-area owner prevents the fixed navigation from covering
+     the final map button while avoiding stacked 70px paddings on nested feeds. */
+  .personal-control-room .global-radar,
+  .personal-control-room .panels-grid {
+    padding-block-end: 12px !important;
+  }
+
+  /* The shell owns the single final map affordance. Avoid an earlier generic
+     full-map button when Global Radar is also rendered in the briefing. */
+  .personal-control-room .global-radar__mobile-actions {
+    display: none;
+  }
+}

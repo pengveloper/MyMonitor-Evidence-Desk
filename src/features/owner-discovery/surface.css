@@ -1,0 +1,17 @@
+.owner-discovery{min-width:0;max-width:100%;padding:16px;margin-top:16px;border:1px solid var(--border-color,#445365);border-radius:12px;line-height:1.6}
+.owner-discovery *{box-sizing:border-box}
+.owner-discovery p,.owner-discovery li{overflow-wrap:anywhere}
+.owner-discovery button{font:inherit;padding:8px 12px;margin:4px;border:1px solid #74899d;border-radius:8px;background:var(--panel-bg,#172b3d);color:inherit;cursor:pointer;max-width:100%;white-space:normal}
+.owner-discovery button[aria-pressed=true]{border-color:#5ecbb4}
+.owner-discovery :focus-visible{outline:3px solid #d6a72d;outline-offset:3px}
+.owner-discovery section,.owner-discovery aside{min-width:0}
+.owner-discovery details,.owner-discovery .overview,.owner-discovery .instrument-detail{padding:12px;border:1px solid #617286;border-radius:8px;margin:10px 0}
+.owner-discovery summary{cursor:pointer;overflow-wrap:anywhere}
+.owner-discovery h1{font-size:1.35rem}.owner-discovery h2{font-size:1.15rem}.owner-discovery h3{font-size:1rem}
+.owner-discovery a{display:block;overflow-wrap:anywhere;color:var(--accent,#499e91)}
+.owner-discovery .instrument-list{display:flex;flex-wrap:wrap;gap:4px;margin:12px 0}
+.owner-discovery .layout-B .scan-work{display:grid;grid-template-columns:minmax(150px,22%) minmax(0,1fr);gap:16px}
+.owner-discovery .layout-B .instrument-list{flex-direction:column;justify-content:start;align-content:start}
+.owner-discovery .market-context{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.owner-discovery .market-context>h2,.owner-discovery .market-context>p{grid-column:1/-1}
+@media(max-width:700px){.owner-discovery{padding:10px}.owner-discovery .layout-B .scan-work,.owner-discovery .market-context{display:block}}

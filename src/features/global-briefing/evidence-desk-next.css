@@ -1,0 +1,23 @@
+/* Additions remain scoped to the opt-in demo, without changing scroll ownership. */
+.gb-evidence-desk .gb-desk-source { padding:12px 0; margin:8px 0; border-top:1px solid #d4cebc; }
+.gb-evidence-desk .gb-desk-source summary { font-size:15px; line-height:1.6; cursor:pointer; }
+.gb-evidence-desk .gb-desk-source p { font-size:14px; line-height:1.8; overflow-wrap:anywhere; margin:12px 0; }
+.gb-evidence-desk .gb-desk-source small { color:#626e65; }
+.gb-evidence-desk .gb-desk-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+.gb-evidence-desk .gb-desk-actions button { border:1px solid #b1b7a6; border-radius:6px; min-height:44px; padding:10px 13px; }
+.gb-evidence-desk .gb-desk-actions button:first-child:not(:disabled) { background:#194b46; color:#fff9e9; }
+.gb-evidence-desk .gb-desk-actions button:disabled { opacity:.55; cursor:not-allowed; }
+.gb-evidence-desk .gb-desk-reader [hidden] { display:none!important; }
+.gb-evidence-desk .gb-desk-save-status { color:#315d4d; font-size:14px; line-height:1.6; min-height:24px; margin:12px 0; }
+.gb-evidence-desk .gb-desk-saved-row { padding:12px 0; border-bottom:1px solid #d4cebc; display:grid; gap:7px; }
+.gb-evidence-desk .gb-desk-saved-row button { text-align:left; padding:8px; min-height:44px; overflow-wrap:anywhere; }
+.gb-evidence-desk .gb-desk-reader[data-mode=saved] { border-left:3px solid #a17d39; padding-left:12px; }
+.gb-evidence-desk .gb-desk-reading button { border-bottom:1px solid #735727; padding:8px 0; }
+.gb-evidence-desk .gb-desk-meta { font-size:13px; }
+.gb-evidence-desk .gb-desk-tabs button { font-size:14px; }
+@media(prefers-reduced-motion:no-preference) {
+  .gb-evidence-desk .gb-desk-reading { animation:desk-reveal 140ms ease-out; }
+  .gb-evidence-desk .gb-desk-source[open] { animation:desk-reveal 140ms ease-out; }
+  .gb-evidence-desk button { transition:background-color 120ms ease-out; }
+  @keyframes desk-reveal { from { opacity:.65; } to { opacity:1; } }
+}

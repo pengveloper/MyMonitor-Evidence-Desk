@@ -1,0 +1,65 @@
+diff --git a/index.js b/index.js
+index f01e9a16b..3ed914cce 100644
+--- a/index.js
++++ b/index.js
+@@ -391,9 +391,24 @@ module.exports = class CachePolicy {
+      *   - revalidation: { headers: Record<string, string>, synchronous: boolean } Set if you should send this to the origin server
+      *   - response: { headers: Record<string, string> } Set if you can respond to the client with these cached headers
+      */
++    // MyMonitor defensive policy, not an upstream/RFC vulnerability claim.
++    // Derive from policy state so serialized and revalidated entries use the
++    // same boundary. Ordinary expiration (including max-age=0) is not a ban.
++    _reuseForbidden() {
++        return !this.storable() || !!this._rescc['no-cache'] ||
++            this._resHeaders.vary === '*' ||
++            (this._isShared && (!!this._rescc['proxy-revalidate'] ||
++                (!!this._resHeaders['set-cookie'] &&
++                    !this._rescc.public && !this._rescc.immutable)));
++    }
++
+     evaluateRequest(req) {
+         this._assertRequestHasHeaders(req);
+ 
++        if (this._reuseForbidden()) {
++            return this._evaluateRequestMissResult(req);
++        }
++
+         // In all circumstances, a cache MUST NOT ignore the must-revalidate directive
+         if (this._rescc['must-revalidate']) {
+             return this._evaluateRequestMissResult(req);
+@@ -664,6 +679,7 @@ module.exports = class CachePolicy {
+      * @returns {number} Time-to-live in milliseconds.
+      */
+     timeToLive() {
++        if (this._reuseForbidden()) return 0;
+         const age = this.maxAge() - this.age();
+         const staleIfErrorAge = age + toNumberOrZero(this._rescc['stale-if-error']);
+         const staleWhileRevalidateAge = age + toNumberOrZero(this._rescc['stale-while-revalidate']);
+@@ -683,6 +699,7 @@ module.exports = class CachePolicy {
+      * @returns {boolean} `true` if `stale-if-error` condition allows use of a stale response.
+      */
+     _useStaleIfError() {
++        if (this._reuseForbidden()) return false;
+         return this.maxAge() + toNumberOrZero(this._rescc['stale-if-error']) > this.age();
+     }
+ 
+@@ -690,6 +707,7 @@ module.exports = class CachePolicy {
+      * @returns {boolean} `true` if `stale-while-revalidate` is currently allowed.
+      */
+     useStaleWhileRevalidate() {
++        if (this._reuseForbidden()) return false;
+         const swr = toNumberOrZero(this._rescc['stale-while-revalidate']);
+         return swr > 0 && this.maxAge() + swr > this.age();
+     }
+@@ -913,6 +931,11 @@ module.exports = class CachePolicy {
+                     ? response.headers[k]
+                     : this._resHeaders[k];
+         }
++        // A 304 may introduce a reuse restriction absent from the old entry.
++        // Keep these policy headers even when the old-header loop never saw them.
++        for (const k of ['cache-control', 'set-cookie', 'vary']) {
++            if (k in response.headers) headers[k] = response.headers[k];
++        }
+ 
+         const newResponse = Object.assign({}, response, {
+             status: this._status,

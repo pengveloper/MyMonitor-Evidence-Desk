@@ -1,0 +1,23 @@
+{
+  "evidence": {
+    "General": {
+      "Code": "SOXL",
+      "Type": "ETF",
+      "Name": "Direxion Daily Semiconductor Bull 3x Shares",
+      "Exchange": "NYSE ARCA",
+      "CurrencyCode": "USD",
+      "CountryName": "USA",
+      "UpdatedAt": "2026-09-22",
+      "ISIN": null
+    }
+  },
+  "receipt": {
+    "bundleId": "instrument:6ee64d071f729cf3940af5efe4b9f9bee136df7fc93c8a6e156ffc70511beee5",
+    "contentHash": "11674eaa5a8dd0f0b7d5e10bfd22705d05d2337e934b4d5a145bf248b6192559",
+    "firstSeenAt": "2026-09-23T03:10:37.429218Z",
+    "revisionKnownAt": "2026-09-23T03:10:37.429218Z"
+  },
+  "capturedAt": "2026-09-23T03:10:37.429218Z",
+  "sourceKey": "owner:eodhd:fundamentals:v2:SOXL",
+  "receiptScope": "EXTRACTION_ONLY"
+}

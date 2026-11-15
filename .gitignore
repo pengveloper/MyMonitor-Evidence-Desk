@@ -1,0 +1,7 @@
+node_modules/
+dist-evidence-desk/
+.wrangler/
+.env
+.env.*
+!.env.example
+publication-output/

@@ -1,0 +1,83 @@
+[
+  {
+    "name": "@mapbox/mapbox-gl-rtl-text",
+    "version": "0.3.0",
+    "registry": "https://registry.npmjs.org/@mapbox/mapbox-gl-rtl-text/0.3.0",
+    "dist": {
+      "shasum": "dbf73b11e1dbb0cef2aa869168babab572ae559c",
+      "tarball": "https://registry.npmjs.org/@mapbox/mapbox-gl-rtl-text/-/mapbox-gl-rtl-text-0.3.0.tgz",
+      "fileCount": 8,
+      "integrity": "sha512-OwQplFqAAEYRobrTKm2wiVP+wcpUVlgXXiUMNQ8tcm5gPN5SQRXFADmITdQOaec4LhDhuuFchS7TS8ua8dUl4w==",
+      "signatures": [
+        {
+          "sig": "MEUCIF4to5B2qvloPzYPH0WdE2gjj2zAwzb07F1jIwhbW6X9AiEAvsp8MQR7Xtk/SaQyBZ8USfKvv/U7fOyB8uYIuVfXaCU=",
+          "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+        }
+      ],
+      "unpackedSize": 323313
+    },
+    "files": [
+      {
+        "file": "package/dist/mapbox-gl-rtl-text.js",
+        "sha256": "d1c69035295613baaf83fe23fd9266b0eaed7e5e472e9632b0b5438afc3f589e",
+        "matchesLocal": false
+      },
+      {
+        "file": "package/LICENSE.md",
+        "sha256": "7dca3646879aae2fa04f9d77f98ddeeabe4898be6a592a59985c112fd817300b",
+        "matchesLocal": false
+      }
+    ],
+    "tarballIntegrityVerified": true
+  },
+  {
+    "name": "world-atlas",
+    "version": "2.0.2",
+    "registry": "https://registry.npmjs.org/world-atlas/2.0.2",
+    "dist": {
+      "shasum": "4bca4a578f3a413bd409c3f07f2054fe7375824f",
+      "tarball": "https://registry.npmjs.org/world-atlas/-/world-atlas-2.0.2.tgz",
+      "fileCount": 9,
+      "integrity": "sha512-IXfV0qwlKXpckz1FhwXVwKRjiIhOnWttOskm5CtxMsjgE/MXAYRHWJqgXOpM8IkcPBoXnyTU5lFHcYa5ChG0LQ==",
+      "signatures": [
+        {
+          "sig": "MEYCIQCeQLCUv75v143nyU1NOAB+PbBHI5zT8XtwRUUUzr4UmwIhANkaFQY9p2txa3oO4UKs10KobyrQIIPPH0CpKdOK25kq",
+          "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+        }
+      ],
+      "unpackedSize": 8219628,
+      "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdcULuCRA9TVsSAnZWagAAepgP/jea5KyWuYlBOKdlwmXS\nP2VPKxEwWq8RwwlWtQYb3jZDOdJUvF3VLAeqCpmAYtl65I9FxF/Uettnx0vQ\n8JLXbKcVsFCu9Fu736V6jVe6pUONCHlbGR1/y+dPIvaZ8HalCieLp3gkVgat\ne4yW9/lEZ9KgqpIrsuGUo4Kepl8QEov4dciJv0UND0t+RgHmkdtNmdzwfwqC\nv3ezTmZDvkgbFT+0vTz9ta+81nBs2iNAaZer3jMlRfnLCgAP/GnxS9pBiv6s\nka2AcIv9TME23VzdMhy/djX76lzdwu4685Hhd+kjg1/0JA6brdGZDgHM9WRJ\nQFwX+slTk/mQTwz6EyhB5W2lKZfoZhPt6glaYk1f6A2IGrtYe+B0ClYPHvGT\n1NMmwNxhSgei8iwk6y5irfxwTABALe+Ucc70yGX/dSIM9yfq7j8JfRbK6OsA\ntCgoPy3OMOzTrxdQcWrEtc75cXAz8j8OYRpQUrQBippFQ0vSn5UmX48decVC\n6DWo458sEY/bFaLXVzhg4Y2eERowRUQJt3jeuhLK0k9xO4IjKN/qT5/SLoX5\nxghKEvc+6CY3tD3FTCVf6QqPKRQGdfR6y65bwwdshr8qAfaf3Luo1PbCEvkD\nBOhBhf9ayJw44yxljJyFUMLXfRi7DcGD4hB+wj4BgIzLDKbyHrNp2sBNcSM2\nmIFQ\r\n=sWWO\r\n-----END PGP SIGNATURE-----\r\n"
+    },
+    "files": [
+      {
+        "file": "package/countries-110m.json",
+        "sha256": "2516c915867c7baf18ddec727aec46c315541a07cfb3d79a6559b05d5e94eee8",
+        "matchesLocal": true
+      },
+      {
+        "file": "package/countries-50m.json",
+        "sha256": "04342cdc1e3016bcd7db1630de95684d67b79fe3c8c460321e87aef469502394",
+        "matchesLocal": true
+      },
+      {
+        "file": "package/LICENSE",
+        "sha256": "8048290dfdb6e83fbed17e8985c8cfc4ce9da9b842642f3d3e497280790cfa31",
+        "matchesLocal": false
+      }
+    ],
+    "tarballIntegrityVerified": true
+  },
+  {
+    "name": "onnxruntime-web/common",
+    "version": "1.14.0",
+    "thirdPartyNoticeSource": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.14.0/ThirdPartyNotices.txt",
+    "thirdPartyNoticeSha256": "cc63920441c5681cfb1663caf1de1858349b517fc1bed9ca669a85bc526cd13e"
+  },
+  {
+    "name": "pmtiles",
+    "version": "4.4.0",
+    "commit": "6f6c9c8697f26c5394dc351f04cec08656e905b6",
+    "source": "https://raw.githubusercontent.com/protomaps/PMTiles/6f6c9c8697f26c5394dc351f04cec08656e905b6/LICENSE",
+    "sha256": "0371c38f338835f7fc13ed71176f3d92144e22c8b736a31cced57adbbeb647b3"
+  }
+]

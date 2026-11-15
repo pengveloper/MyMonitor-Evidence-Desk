@@ -1,0 +1,20 @@
+{
+  "package": "http-cache-semantics",
+  "upstreamVersion": "4.2.0",
+  "upstreamSourceCommit": "83810982b8f8996b101ed761548ea7e87a9132ea",
+  "upstreamTarball": "https://registry.npmjs.org/http-cache-semantics/-/http-cache-semantics-4.2.0.tgz",
+  "upstreamTarballSha256": "f57454db8ab2d06a4baabbfb7c70ad4181a00b7ee0efebcdffa9ba313bd80eb7",
+  "localVersion": "4.2.1-mymonitor.1",
+  "patch": "defensive-hardening.patch",
+  "patchSha256": "91167b9d3b8a60c1b8dc380bd5061e629c81b9f8725281c3f5a6a52f293e4f67",
+  "advisoryStatus": "UPSTREAM_DISPUTED_ADVISORY",
+  "policy": "MYMONITOR_DEFENSIVE_HARDENING",
+  "tarball": "http-cache-semantics-4.2.1-mymonitor.1.tgz",
+  "tarballSha256": "b74c07b70fab2177f33b144158906f9dbb57f23fb9f995eab22f8496d009c2d6",
+  "files": {
+    "LICENSE": "ab868ad5a2ef5068560d9cd3b2180ec63c140bb4c5cae1ba779d300a0ac74fa3",
+    "README.md": "be77466544e7060ad859664e779d84db4440f6dcca28da0975d0bcd97000c9fa",
+    "index.js": "eb9b80f4f2ca81b5ced979593ce38d7618329deb4973997a5d7204e10a97863d",
+    "package.json": "f2b191de64104819130eb3ccccaa0a173b3c70fcf6bf10212a3f3273ee5d1231"
+  }
+}

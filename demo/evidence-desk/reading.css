@@ -1,0 +1,13 @@
+/* Static demo only: reduce empty space, preserve type size and map controls. */
+.gb-evidence-desk .gb-main { padding-top:12px; }
+.gb-evidence-desk .gb-title { margin-bottom:10px; }
+.gb-evidence-desk .gb-title h1 { margin:3px 0; }
+.gb-evidence-desk .gb-selected { padding:14px 20px; gap:5px; }
+.gb-evidence-desk .gb-selected>.gb-eyebrow { display:none; }
+.gb-evidence-desk .gb-desk-reading { min-height:112px; padding:14px 0; }
+.gb-evidence-desk .gb-desk-actions { margin-top:8px; }
+.gb-evidence-desk .gb-desk-save-status:empty { min-height:0; margin:0; }
+@media(max-width:700px) {
+  .gb-evidence-desk .gb-main { padding-top:12px; }
+  .gb-evidence-desk .gb-selected { padding:14px 16px; }
+}

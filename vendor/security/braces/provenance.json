@@ -1,0 +1,26 @@
+{
+  "package": "braces",
+  "upstreamVersion": "3.0.3",
+  "upstreamSourceCommit": "74b2db2938fad48a2ea54a9c8bf27a37a62c350d",
+  "upstreamTarball": "https://registry.npmjs.org/braces/-/braces-3.0.3.tgz",
+  "upstreamTarballSha256": "1cd18e862c8640b4568b1425a7df4ee030ff201d45b2da8f9f222d2987494ffc",
+  "localVersion": "3.0.4-mymonitor.1",
+  "patch": "upstream-pr72.patch",
+  "patchSha256": "4d899ebea10687a59cdedf74e96d86fbac647a75874e48ed77829aec672b8562",
+  "upstreamPullRequest": "https://github.com/micromatch/braces/pull/72",
+  "upstreamPatchCommit": "28d440b5dd449dbf1fe6f3506cf94ecca4d02660",
+  "tarball": "braces-3.0.4-mymonitor.1.tgz",
+  "tarballSha256": "d4ee9ea521025d940a546bdad90e6104c1fbfe814abe546b3e26aa91db297e1a",
+  "files": {
+    "LICENSE": "35bdd8a44339719441900fb50fbefc5e2dca1ca662cbaed7a687de842c8b70f2",
+    "README.md": "e2fe5795a892346314a01aabdde1b1e6d4cf778531b9cec820cd5ac115a88902",
+    "index.js": "332ea07c7b006361aad12aa994ca75dc1db8e8382b884909e2f38f10b85c88a4",
+    "package.json": "56e6026e83734a552855ba1342c021ec4b0dcb6c603afa2602762707d37c2dd0",
+    "lib/compile.js": "b651f7715e6db8942ce61d3394357b4d81c8ece88240aa31a458ea1165edd195",
+    "lib/constants.js": "f9fb688959232eee3e6ad7906a5b0e3234815db49ee857ef86983d65b917dc7c",
+    "lib/expand.js": "7ea3e14c2b2b256ef244fd3d83b8fcaa20aa2232b4e6d768c3bb6ab567f66cf5",
+    "lib/parse.js": "b1bf766fba6a62035f78ecbda8a5fd94e921aa1c1ec0cdf3f467e9c836abed55",
+    "lib/stringify.js": "49dc2d8bafa74f34715a18a845bcb82ce66caaf3bab4cf117998e06b1f9a50a9",
+    "lib/utils.js": "b5a7596aa67730412b3c029ef09e84e6b67b8e445cffd35d1d295549c89066c7"
+  }
+}
