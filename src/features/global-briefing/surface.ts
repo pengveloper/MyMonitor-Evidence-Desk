@@ -20,7 +20,7 @@ function detail(label: string, value: string): HTMLElement {
   const row = el('div', '', 'gb-detail'); row.append(el('dt', label), el('dd', value)); return row;
 }
 function readableState(state: string): string {
-  return ({ FRESH: '최근 관측', STALE: '오래된 관측', UNKNOWN: '최신성 미확인', AVAILABLE: '근거 있음', UNAVAILABLE: '근거 사용 불가', UPDATING: '갱신 중', DELAYED: '수신 지연', NO_DATA: '자료 없음', PARTIAL: '일부 근거', MISSING: '자료 미수신' } as Record<string, string>)[state] ?? '상태 미확인';
+  return ({ FRESH: '최근 관측', STALE: '오래된 관측', UNKNOWN: '최신 여부 정보 없음', AVAILABLE: '근거 있음', UNAVAILABLE: '근거 사용 불가', UPDATING: '갱신 중', DELAYED: '수신 지연', NO_DATA: '자료 없음', PARTIAL: '일부 근거', MISSING: '자료 미수신' } as Record<string, string>)[state] ?? '상태 미확인';
 }
 export interface BriefingOptions {
   evidenceDesk?: boolean;
@@ -313,8 +313,9 @@ export function mountGlobalBriefing(host: HTMLElement, options: BriefingOptions 
       if (deskEnabled) { if (rail.firstElementChild !== evidence) rail.prepend(evidence); }
       else { if (rail.lastElementChild !== evidence) rail.append(evidence); root.classList.remove('gb-desk-atlas'); }
       deskViews.querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-pressed', String(i === Number(root.classList.contains('gb-desk-atlas')))));
- stamp.textContent = `화면 구성 ${briefingTime(value.model.generatedAt)} · 관측 시각은 근거별 확인`;
-      scenario.hidden = !value.scenario; scenario.textContent = value.scenario ? '가상 시나리오 · 기준 ' + briefingTime(value.model.generatedAt) + ' · 실제 계좌·현재 시장 아님' : '';
+ stamp.textContent = value.scenario ? '고정된 예시 자료' : `화면 구성 ${briefingTime(value.model.generatedAt)} · 관측 시각은 근거별 확인`;
+      scenario.hidden = !value.scenario; scenario.replaceChildren();
+      if(value.scenario)scenario.append(el('strong','가상 시나리오 데모'),el('span','자료 기준: '+briefingTime(value.model.generatedAt)),el('span','오늘의 뉴스가 아닌 고정된 예시 자료입니다.'));
       renderEvents(); publishSearchIndex(); options.onMapUpdate?.(value); },
     updateDiscovery(value: OwnerDiscoveryRead | null) { discovery = value; discoveryFailed = value === null; renderMarket(); publishSearchIndex(); },
     destroy() { options.onSearchIndex?.([]); labelObserver.disconnect(); root.ownerDocument.removeEventListener('keydown', onKey); root.ownerDocument.removeEventListener('mymonitor:briefing-map-select', mapSelection); root.ownerDocument.removeEventListener('mymonitor:briefing-map-evidence', mapEvidence); window.removeEventListener('mymonitor:map-enter', showMap); root.ownerDocument.removeEventListener('mymonitor:briefing-tools', showTools); root.remove(); },

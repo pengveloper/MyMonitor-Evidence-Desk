@@ -11,3 +11,14 @@
   .gb-evidence-desk .gb-main { padding-top:12px; }
   .gb-evidence-desk .gb-selected { padding:14px 16px; }
 }
+
+/* Static synthetic entry only: the device clock is not evidence time. */
+#headerClock { display:none; }
+.gb-scenario { display:flex; flex-wrap:wrap; gap:4px 16px; align-items:baseline; }
+.gb-scenario strong { color:#f3e3b8; }
+.gb-evidence-desk .gb-desk-reading h4 { margin:8px 0 5px; font-size:14px; font-weight:700; }
+.gb-evidence-desk .gb-desk-reading h4:first-child { margin-top:0; }
+.gb-evidence-desk .gb-desk-reading p { margin:5px 0 12px; }
+.gb-evidence-desk .gb-desk-storage-error { color:#7c3826; font-size:14px; line-height:1.6; }
+.gb-evidence-desk .gb-desk-storage-error:empty { display:none; }
+.gb-evidence-desk .gb-desk-freshness-note { margin:8px 0; grid-column:1/-1; }

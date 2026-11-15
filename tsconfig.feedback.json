@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false
+  },
+  "include": [
+    "src/vite-env.d.ts",
+    "src/features/global-briefing/evidence-desk.ts",
+    "src/features/global-briefing/surface.ts",
+    "preview/evidence-desk-fixture.ts",
+    "tests/demo-feedback.test.ts"
+  ]
+}

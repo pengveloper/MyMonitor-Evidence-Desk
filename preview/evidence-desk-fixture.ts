@@ -5,6 +5,10 @@ import type { DemoDocument } from '../src/features/global-briefing/demo-briefs';
 /** Same fixture for baseline and improved app; authored fiction, no external articles. */
 export function evidenceDeskFixture(state = 'normal'): BriefingUpdate {
   const data=briefingPolishFixture();
+  // Explicit display of the existing Taiwan scenario's unresolved impact.
+  // No prose classification, causal assertion or source/time rewrite.
+  const taiwan=data.model.entries.find(e=>e.id==='world:earthquake:scenario-taiwan');
+  if(taiwan)taiwan.details.uncertainty='반도체 생산 차질 여부는 이 자료로 확인할 수 없습니다. '+taiwan.details.uncertainty;
   const documents:Record<string,DemoDocument>={};
   for(const event of data.model.entries){
     documents[event.id]={synthetic:true,id:event.id,title:event.id.includes('earthquake')?'지진 관측 연습 자료':event.title,
