@@ -8,7 +8,9 @@
     "postinstall": "node demo/evidence-desk/bootstrap.mjs",
     "build:evidence-desk": "vite build --config demo/evidence-desk/vite.config.ts",
     "test:feedback": "vitest run --config vitest.demo.config.ts",
-    "typecheck:feedback": "tsc --noEmit -p tsconfig.feedback.json"
+    "typecheck:feedback": "tsc --noEmit -p tsconfig.feedback.json",
+    "typecheck:demo": "node demo/evidence-desk/typecheck.mjs",
+    "verify:demo": "node demo/evidence-desk/verify.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.7",

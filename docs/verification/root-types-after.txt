@@ -1,0 +1,1 @@
+src/features/stock-research/open-outcome-data.ts(20,30): error TS2307: Cannot find module '../../../data/open-history/open-outcome-0.json' or its corresponding type declarations.

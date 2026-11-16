@@ -1,0 +1,13 @@
+main: 832 local files, 0 diagnostics
+worker: 27 local files, 0 diagnostics
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Duration  1.21s (transform 354ms, setup 0ms, import 615ms, tests 151ms, environment 287ms)
+ℹ tests 4
+ℹ pass 4
+Ran 1 test in 0.273s
+OK
+✓ built in 24.76s
+Build/typecheck coverage PASS: 844 main, 55 worker modules
+Artifact manifest PASS: 398 file hashes
+verify:demo PASS (no deployment, provider requests or browser UI retest)

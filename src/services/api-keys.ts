@@ -71,7 +71,7 @@ export async function createApiKey(name: string): Promise<CreateApiKeyResult> {
     userId,
     'creating the API key',
     () => client.mutation(
-      (api as any).apiKeys.createApiKey,
+      api.apiKeys.createApiKey,
       { name: name.trim(), keyPrefix, keyHash },
     ),
   );
@@ -95,7 +95,7 @@ export async function listApiKeys(): Promise<ApiKeyInfo[]> {
   return settleAccountOperation(
     userId,
     'loading API keys',
-    () => client.query((api as any).apiKeys.listApiKeys, {}),
+    () => client.query(api.apiKeys.listApiKeys, {}),
   );
 }
 
@@ -113,7 +113,7 @@ export async function revokeApiKey(keyId: string): Promise<void> {
   const result = await settleAccountOperation(
     userId,
     'revoking the API key',
-    () => client.mutation((api as any).apiKeys.revokeApiKey, { keyId }),
+    () => client.mutation(api.apiKeys.revokeApiKey, { keyId }),
   );
   assertAccountStillCurrent(userId, 'revoking the API key');
 
