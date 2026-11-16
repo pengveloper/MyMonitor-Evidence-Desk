@@ -1,12 +1,22 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { resolve, relative, sep } from 'node:path';
 import { createHash } from 'node:crypto';
 const sha = value => createHash('sha256').update(value).digest('hex');
 export function createNoticeCollection(root) {
   root = resolve(root);
+  const rootId = root.split(sep).join('/');
   const packages = new Map();
+  const localModules = { main: new Set(), worker: new Set() };
   const collector = scope => ({ name: 'demo-licenses-' + scope,
     generateBundle(_options, bundle) {
+      for (const id of this.getModuleIds()) {
+        // A main-thread Vite worker proxy is not the worker implementation.
+        if (scope === 'main' && id.includes('?worker')) continue;
+        const path = id.split('?')[0];
+        if (path.startsWith(rootId + '/') && !path.includes('/node_modules/')) {
+          localModules[scope].add(relative(root, path).split(sep).join('/'));
+        }
+      }
       for (const chunk of Object.values(bundle)) {
         if (chunk.type !== 'chunk') continue;
         for (const id of Object.keys(chunk.modules)) {
@@ -37,5 +47,5 @@ export function createNoticeCollection(root) {
       }
     }
   });
-  return { collector, records: (out) => [...packages.values()].sort((a,b) => (a.name + a.version).localeCompare(b.name + b.version)).map(p => ({ ...p, bundles:[...p.bundles].filter(file => !out || existsSync(resolve(out,file))).sort(), scopes:[...p.scopes].sort() })) };
+  return { collector, sourceModules: () => Object.fromEntries(Object.entries(localModules).map(([scope, files]) => [scope, [...files].sort()])), records: (out) => [...packages.values()].sort((a,b) => (a.name + a.version).localeCompare(b.name + b.version)).map(p => ({ ...p, bundles:[...p.bundles].filter(file => !out || existsSync(resolve(out,file))).sort(), scopes:[...p.scopes].sort() })) };
 }

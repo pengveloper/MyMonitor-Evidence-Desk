@@ -1,3 +1,6 @@
+/// <reference lib="webworker" />
+declare const self: DedicatedWorkerGlobalScope;
+
 /**
  * Web Worker for heavy computational tasks (clustering & correlation analysis).
  * Runs O(n²) Jaccard clustering and correlation detection off the main thread.

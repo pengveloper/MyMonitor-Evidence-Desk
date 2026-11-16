@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable",
+      "WebWorker"
+    ],
+    "types": [
+      "vite/client"
+    ]
+  },
+  "include": [
+    "src/vite-env.d.ts",
+    "src/workers/analysis.worker.ts",
+    "src/workers/ml.worker.ts"
+  ],
+  "exclude": []
+}

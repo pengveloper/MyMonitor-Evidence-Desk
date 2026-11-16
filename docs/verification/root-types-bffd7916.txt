@@ -1,0 +1,12 @@
+src/App.ts(231,25): error TS2307: Cannot find module '../convex/_generated/dataModel' or its corresponding type declarations.
+src/App.ts(2171,29): error TS18046: 'result' is of type 'unknown'.
+src/features/stock-research/open-outcome-data.ts(20,30): error TS2307: Cannot find module '../../../data/open-history/open-outcome-0.json' or its corresponding type declarations.
+src/services/api-keys.ts(80,16): error TS18046: 'result' is of type 'unknown'.
+src/services/api-keys.ts(80,33): error TS18046: 'result' is of type 'unknown'.
+src/services/api-keys.ts(80,57): error TS18046: 'result' is of type 'unknown'.
+src/services/api-keys.ts(122,15): error TS2339: Property 'keyHash' does not exist on type '{}'.
+src/services/api-keys.ts(136,50): error TS2339: Property 'keyHash' does not exist on type '{}'.
+src/services/billing.ts(26,25): error TS2307: Cannot find module '../../convex/_generated/dataModel' or its corresponding type declarations.
+src/services/convex-client.ts(16,32): error TS7016: Could not find a declaration file for module '../../convex/_generated/api'. '<repository>/convex/_generated/api.js' implicitly has an 'any' type.
+src/services/convex-client.ts(503,32): error TS7016: Could not find a declaration file for module '../../convex/_generated/api'. '<repository>/convex/_generated/api.js' implicitly has an 'any' type.
+src/services/followed-countries.ts(54,8): error TS2307: Cannot find module '../../convex/followedCountries' or its corresponding type declarations.

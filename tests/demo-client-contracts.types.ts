@@ -1,0 +1,10 @@
+import type { api } from '../convex/_generated/api';
+import type { Id } from '../convex/_generated/dataModel';
+import type { FollowMutationResult } from '../convex/followedCountries';
+type Equal<A, B> = (<T>() => T extends A ? 1 : 2) extends (<T>() => T extends B ? 1 : 2) ? true : false;
+type Assert<T extends true> = T;
+export type CreateArgs = Assert<Equal<typeof api.apiKeys.createApiKey['_args'], { name: string; keyPrefix: string; keyHash: string }>>;
+export type CreateResult = Assert<Equal<keyof typeof api.apiKeys.createApiKey['_returnType'], 'id' | 'name' | 'keyPrefix'>>;
+export type NominalId = Assert<string extends Id<'businessProGrants'> ? false : true>;
+export type FreeCap = Assert<Equal<Extract<FollowMutationResult, { ok: false }>['reason'], 'FREE_CAP'>>;
+export type ClaimCounts = Assert<Equal<typeof api.payments.billing.claimSubscription['_returnType']['claimed'], { subscriptions: number; entitlements: number; customers: number; payments: number }>>;
