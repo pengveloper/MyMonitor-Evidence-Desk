@@ -27,8 +27,16 @@ export interface BriefingOptions {
   onSearch?: () => void;
   onSearchIndex?: (items: BriefingSearchItem[]) => void;
   onMapUpdate?: (update: BriefingUpdate) => void;
-  onMapFocus?: (latitude: number, longitude: number) => void;
+  onMapFocus?: (latitude: number, longitude: number, motion?: { durationMs: number }) => void;
+  /** Field design: the selected event's point for the map engine's own marker, or null to clear it. */
+  onMapSelect?: (selection: { latitude: number; longitude: number; label: string; severity: 'high' | 'watch' | 'normal' | null } | null) => void;
+  /** Field design: the section the reader opened (Atlas, Signals, Research, Portfolio, Sources, Tools). */
+  onSectionChange?: (section: string) => void;
   onMapResize?: () => void;
+  /** 'next' is the field design. This snapshot's own surface ignores it; the alpha app mounts the field view directly. */
+  design?: 'current' | 'next';
+  /** When given, the field top bar offers switching between the two layouts. Display only. */
+  onDesignChange?: (design: 'current' | 'next') => void;
 }
 
 /** A presentation of already-read canonical state. This module performs no IO. */

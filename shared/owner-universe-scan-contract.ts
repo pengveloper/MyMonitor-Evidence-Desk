@@ -35,7 +35,7 @@ export interface UniverseScanInput {
   assembledAt: string;
   universe: UniverseConfig;
   instruments: Record<string, InstrumentInputs>;
-  global: { fx: PublicFxDiscoveryInput | null; macro: PublicFredDiscoveryInput | null };
+  global: { fx: PublicFxDiscoveryInput | null; macro: PublicFredDiscoveryInput | null; macroReferences?: PublicFredDiscoveryInput[] };
   benchmark: BenchmarkInput | null;
   contextInputs?: Array<{group: ContextGroup; item: ContextItem; receipt: DiscoveryReceipt; capturedAt: string}>;
   contextEntities?: Array<{symbol: string; classification: PublicClassificationInput}>;

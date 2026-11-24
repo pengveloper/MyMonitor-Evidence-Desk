@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["vite/client", "node"],
+    "paths": {
+      "@/config/commands": ["alpha/shims/commands.ts"],
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["app/**/*.ts", "server/**/*.ts", "shared/**/*.ts", "shims/**/*.ts", "tests/**/*.ts", "../src/vite-env.d.ts"],
+  "exclude": []
+}

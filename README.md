@@ -33,6 +33,18 @@ Node.js 24와 npm, 패키지 registry 네트워크가 필요합니다. 원본 lo
 
 모든 검수 PASS, 사용자 선호, WorldMonitor 대비 우월성 또는 25% 시간 단축을 주장하지 않습니다. [참여자 과업지](docs/design/evidence-desk/PARTICIPANT_TASKS.md)를 사용하며 정답지는 이 사이트/소스 패키지에 포함하지 않습니다.
 
+## 최신 화면 기반 Alpha (실제 자료·자체 설치)
+
+위의 합성 평가판은 **초기 공개 데모**입니다. 최신 Field 화면으로 만든 Alpha는 [`alpha/`](alpha/README.md)에 있습니다.
+
+- **공개 데모**: API 키 없이 실행. 합성 자료가 기본이고, 브라우저가 USGS에서 직접 받는 실제 지진 자료 모드를 켤 수 있습니다.
+- **자체 설치**: 내 서버가 USGS 공개 피드를 수집·저장하고 같은 화면에 제공합니다. 계정·키·유료 호출이 없고 자동 수집은 기본으로 꺼져 있습니다.
+- 개인 운영 MyMonitor의 서버·키·캐시·계좌 자료에 의존하지 않습니다.
+
+시작: `npm ci && npm run alpha:build && npm run alpha:start` → http://127.0.0.1:4310 · 검증: `npm run verify:alpha`
+
+이 Alpha를 공개 사이트에 올리는 것과 새 릴리스 발행은 별도 결정입니다. 기존 공개 사이트는 이 변경으로 바뀌지 않습니다.
+
 ## 출처와 기여
 
 WorldMonitor의 App shell, MapContainer, MapLibre/deck.gl, 검색 및 기본 화면 구조를 재사용했습니다. MyMonitor의 추가 기여는 합성 Evidence Desk 읽기 흐름, 사실과 해석의 구분을 돕는 표현, frozen demo 브리프 저장/재개, 합성 전용 배포 격리입니다. 독자 개발한 지도 엔진으로 소개하지 않습니다.

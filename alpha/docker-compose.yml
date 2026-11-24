@@ -1,0 +1,23 @@
+# docker compose -f alpha/docker-compose.yml up --build
+# Opens http://127.0.0.1:4310. The port is published on this machine only; put your own
+# reverse proxy and access control in front before exposing it anywhere else.
+services:
+  mymonitor-alpha:
+    build:
+      context: ..
+      dockerfile: alpha/Dockerfile
+    ports:
+      - "127.0.0.1:4310:4310"
+    environment:
+      # 0 keeps automatic collection off. Set 5 or more (minutes) to collect on a schedule.
+      ALPHA_AUTO_COLLECT_MINUTES: "${ALPHA_AUTO_COLLECT_MINUTES:-0}"
+      # Optional. Lets another machine or a cron job ask for a collection with `Authorization: Bearer <token>`.
+      # The page never holds a token, so inside a container "collect now" on the page is refused by design:
+      # collect with `docker compose -f alpha/docker-compose.yml exec mymonitor-alpha node alpha/server/collect.ts`
+      # or turn automatic collection on above.
+      ALPHA_COLLECT_TOKEN: "${ALPHA_COLLECT_TOKEN:-}"
+    volumes:
+      - mymonitor-alpha-data:/data
+    restart: unless-stopped
+volumes:
+  mymonitor-alpha-data:

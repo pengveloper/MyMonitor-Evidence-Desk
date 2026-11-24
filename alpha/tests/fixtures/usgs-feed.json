@@ -1,0 +1,7 @@
+{"type":"FeatureCollection","metadata":{"generated":1795500000000,"url":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson","title":"Test fixture - invented events","status":200,"api":"1.14.1","count":4},
+"features":[
+{"type":"Feature","properties":{"mag":6.3,"place":"Fixture event A, 82 km E of Testville","time":1795496400000,"updated":1795497000000,"url":"https://earthquake.usgs.gov/earthquakes/eventpage/fx0000a","tsunami":1,"alert":"orange","status":"reviewed","type":"earthquake"},"geometry":{"type":"Point","coordinates":[142.4,38.3,29.5]},"id":"fx0000a"},
+{"type":"Feature","properties":{"mag":4.8,"place":"Fixture event B, 12 km S of Sampletown","time":1795410000000,"updated":1795410600000,"url":"https://earthquake.usgs.gov/earthquakes/eventpage/fx0000b","tsunami":0,"alert":null,"status":"automatic","type":"earthquake"},"geometry":{"type":"Point","coordinates":[-71.2,-30.1,45]},"id":"fx0000b"},
+{"type":"Feature","properties":{"mag":5.1,"place":null,"time":1795300000000,"updated":null,"url":"http://example.invalid/not-usgs","tsunami":0,"alert":"green","status":"reviewed","type":"earthquake"},"geometry":{"type":"Point","coordinates":[27.1,37.8,null]},"id":"fx0000c"},
+{"type":"Feature","properties":{"mag":null,"place":"Fixture event with no magnitude","time":1795200000000},"geometry":{"type":"Point","coordinates":[10,10,10]},"id":"fx0000d"}
+]}
