@@ -1,0 +1,8 @@
+node_modules
+.git
+dist-evidence-desk
+dist-alpha
+alpha-data
+publication-output
+.env
+.env.*

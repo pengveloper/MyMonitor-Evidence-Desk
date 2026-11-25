@@ -1,0 +1,29 @@
+{
+  "note": "Files below are byte-identical to the private MyMonitor repository at the stated revision. No history, configuration, logs or data were copied.",
+  "privateRevision": {
+    "base": "4ea84df279a8a2b763fd8c5efbf85109c94a25f1",
+    "plus": "feat/field-learning-status-20261124 @ 59853ab2 (learning status in Research)"
+  },
+  "files": {
+    "src/features/global-briefing/field/view.ts": "0ef95c9e478badba70b8dc9e0f9341445672f56da4aa0d61fcf1fdf989f046b1",
+    "src/features/global-briefing/field/data.ts": "1494063e1bc57bd69cf6ab045c254edeb72540bd26fcb994b474a58f1f650836",
+    "src/features/global-briefing/field/field.css": "3dea26446af50ad4aabfcf59074550cecf01fddf4a34a74ece731b5cc2abc2e1",
+    "shared/autonomous-learning-status.ts": "3aa796163dd52cf6f9f1e547c045aae8ccdd4339c764d7a94a0fd6315fb4825f",
+    "shared/owner-news-contract.ts": "40081d836e7e18d23e0990df660a23d365606da24767aa9c3445168b7159401a",
+    "shared/owner-universe-scan-contract.ts": "d6cd5fa3e659591a247d844310e827b6faa841eac0213781a6f270d6c63bd5cb",
+    "src/features/owner-discovery/result-labels.ts": "582c74569b37cfb12dcc0a862e51ca42af4715a4299f7ee17ba6048d5d90db2a",
+    "src/features/product-recovery/executive-observation-adapter.ts": "419e8ccaa299d1359d1e252f6aa60b67f77d410bfa2c08b42f6e9f9f67c702e1",
+    "src/features/product-recovery/situation-synthesis-model.ts": "cc3a44fafa939b0661d9260736fa7fcb07c4090e6cf903fa0ba580f037d15ebb",
+    "src/features/global-briefing/presentation.ts": "0d1d57d90ee018a5a50101465590c5b3be99be078c9977e572631aa4c5578d4e",
+    "src/features/global-briefing/world-map.ts": "5b67cbb3581ee26920e9b2062711754f4e7f309d7752414d9ed991ecfc02d57d"
+  },
+  "fonts": {
+    "directory": "src/features/global-briefing/field/fonts",
+    "fileCount": 97,
+    "treeSha256": "87ffca247f0ec7831659a73510b61c5bebf24e6bf577875af3f32909ad9daaf1"
+  },
+  "publicOnlyDifferences": [
+    "src/features/global-briefing/surface.ts: optional fields added to BriefingOptions so the field view type-checks; the demo surface itself is unchanged",
+    "src/features/global-briefing/model.ts: keeps the demoDocuments field the existing demo uses"
+  ]
+}

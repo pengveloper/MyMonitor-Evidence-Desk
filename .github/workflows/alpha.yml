@@ -1,0 +1,126 @@
+# Checks the alpha from a clean checkout the way its README tells a new user to run it:
+# the source checks, then the Docker run shape with a real USGS collection, a restart and a
+# recreated container, and the refusal of collection requests from outside the machine.
+name: alpha
+
+on:
+  pull_request:
+    paths:
+      - 'alpha/**'
+      - 'src/features/global-briefing/field/**'
+      - 'demo/**'
+      - 'shared/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.dockerignore'
+      - '.github/workflows/alpha.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'alpha/**'
+      - 'src/features/global-briefing/field/**'
+      - 'demo/**'
+      - 'shared/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.dockerignore'
+      - '.github/workflows/alpha.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: alpha-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source:
+    name: source checks (README steps)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: verify:alpha (types, tests, build, bundle audit, invented-feed server)
+        run: npm run verify:alpha
+      - name: verify:demo (the existing Evidence Desk demo still builds and verifies)
+        run: npm run verify:demo
+      - name: Self-hosted start and one real USGS collection
+        run: |
+          set -euo pipefail
+          export ALPHA_DATA_DIR="$RUNNER_TEMP/alpha-data"
+          npm run alpha:start > "$RUNNER_TEMP/server.log" 2>&1 &
+          server=$!
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4310/api/status > /dev/null && break; sleep 1; done
+          test "$(curl -fsS http://127.0.0.1:4310/api/events | jq -r .state)" = EMPTY
+          curl -fsS -X POST http://127.0.0.1:4310/api/collect | jq -c '.attempt | {ok, received, added, rejected, error}'
+          test "$(curl -fsS http://127.0.0.1:4310/api/events | jq -r .state)" = FRESH
+          test "$(curl -s -o /dev/null -w '%{http_code}' -X POST http://127.0.0.1:4310/api/collect)" = 429
+          curl -fsS http://127.0.0.1:4310/api/status | jq -c '{storedEvents, collectFromBrowser, autoCollectMinutes, paidProviders}'
+          kill "$server"
+
+  docker:
+    name: docker run shape
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      COMPOSE: docker compose -f alpha/docker-compose.yml
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and start
+        run: $COMPOSE up --build -d
+      - name: Wait until healthy
+        run: |
+          for i in $(seq 1 40); do
+            state=$(docker inspect --format '{{.State.Health.Status}}' "$($COMPOSE ps -q mymonitor-alpha)")
+            [ "$state" = healthy ] && exit 0; sleep 3
+          done
+          $COMPOSE logs; exit 1
+      - name: Page, profile and an empty store
+        run: |
+          set -euo pipefail
+          curl -fsS http://127.0.0.1:4310/ | grep -q alpha-field
+          test "$(curl -fsS http://127.0.0.1:4310/alpha-profile.json | jq -r .profile)" = community
+          test "$(curl -fsS http://127.0.0.1:4310/api/events | jq -r .state)" = EMPTY
+      - name: Collection from outside the container's loopback is refused without a token
+        run: test "$(curl -s -o /dev/null -w '%{http_code}' -X POST http://127.0.0.1:4310/api/collect)" = 403
+      - name: One real USGS collection inside the container
+        run: $COMPOSE exec -T mymonitor-alpha node alpha/server/collect.ts
+      - name: Stored events are served
+        run: |
+          set -euo pipefail
+          curl -fsS http://127.0.0.1:4310/api/events | jq -c '{state, lastSuccessAt, count: (.events | length)}'
+          test "$(curl -fsS http://127.0.0.1:4310/api/events | jq -r .state)" = FRESH
+          curl -fsS http://127.0.0.1:4310/api/events | jq '.events | length' > "$RUNNER_TEMP/count"
+          test "$(cat "$RUNNER_TEMP/count")" -gt 0
+      - name: The store survives a restart and a recreated container
+        run: |
+          set -euo pipefail
+          $COMPOSE restart
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4310/api/status > /dev/null 2>&1 && break; sleep 2; done
+          test "$(curl -fsS http://127.0.0.1:4310/api/events | jq '.events | length')" = "$(cat "$RUNNER_TEMP/count")"
+          $COMPOSE down
+          $COMPOSE up -d
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4310/api/status > /dev/null 2>&1 && break; sleep 2; done
+          test "$(curl -fsS http://127.0.0.1:4310/api/events | jq '.events | length')" = "$(cat "$RUNNER_TEMP/count")"
+          curl -fsS http://127.0.0.1:4310/api/status | jq -c '{storedEvents, lastSuccessAt, collectFromBrowser, paidProviders}'
+      - name: The runtime image carries no package tree and runs as an unprivileged user
+        run: |
+          set -euo pipefail
+          id=$($COMPOSE ps -q mymonitor-alpha)
+          test "$(docker exec "$id" id -un)" = node
+          test "$(docker exec "$id" sh -c 'test -d /app/node_modules && echo yes || echo no')" = no
+          docker exec "$id" test -f /app/LICENSE
+          docker exec "$id" test -f /app/NOTICE.md
+          docker image ls --format '{{.Repository}}:{{.Tag}} {{.Size}}' | grep -i alpha || true
+      - name: Logs
+        if: always()
+        run: $COMPOSE logs --no-color | tail -50
+      - name: Remove
+        if: always()
+        run: $COMPOSE down -v

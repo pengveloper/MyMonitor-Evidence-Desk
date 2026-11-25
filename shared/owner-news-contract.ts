@@ -1,7 +1,7 @@
 import type { OwnerEvent } from './owner-intelligence-contract';
 import type { DiscoveryReceipt } from './owner-discovery-contract';
 export interface StoredNewsInput {
-  provider: 'EODHD' | 'SEC' | 'FEDERAL_RESERVE' | 'OFFICIAL';
+  provider: 'EODHD' | 'SEC' | 'FEDERAL_RESERVE' | 'OFFICIAL' | 'OWNER_CANONICAL';
   sourceKey: string;
   events: OwnerEvent[];
   receipt: DiscoveryReceipt;

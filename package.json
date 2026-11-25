@@ -10,7 +10,14 @@
     "test:feedback": "vitest run --config vitest.demo.config.ts",
     "typecheck:feedback": "tsc --noEmit -p tsconfig.feedback.json",
     "typecheck:demo": "node demo/evidence-desk/typecheck.mjs",
-    "verify:demo": "node demo/evidence-desk/verify.mjs"
+    "verify:demo": "node demo/evidence-desk/verify.mjs",
+    "alpha:dev": "vite --config alpha/vite.config.ts",
+    "alpha:build": "vite build --config alpha/vite.config.ts",
+    "alpha:start": "node alpha/server/server.ts",
+    "alpha:collect": "node alpha/server/collect.ts",
+    "alpha:test": "node --test alpha/tests/*.test.ts",
+    "typecheck:alpha": "tsc --noEmit -p alpha/tsconfig.json",
+    "verify:alpha": "node alpha/verify.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.7",

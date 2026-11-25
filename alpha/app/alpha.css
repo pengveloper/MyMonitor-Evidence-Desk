@@ -1,0 +1,47 @@
+/* The alpha's own chrome: one status bar above the field view and the saved-record panel. */
+html, body { margin: 0; height: 100%; background: #0b1016; }
+body { display: flex; flex-direction: column; min-height: 100dvh; font-family: system-ui, -apple-system, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; color: #e8e4d8; }
+#alpha-field { flex: 1 1 auto; min-height: 0; position: relative; }
+#alpha-field > .global-briefing { min-height: 100%; }
+.alpha-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 8px 16px; background: #10171f; border-bottom: 1px solid #23303c; font-size: 13.5px; line-height: 1.45; }
+.alpha-bar strong { font-weight: 600; color: #f1ecdd; white-space: nowrap; }
+.alpha-notice { flex: 1 1 320px; min-width: 0; margin: 0; color: #c5cbd1; }
+.alpha-notice::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; background: #7d8791; }
+.alpha-notice[data-tone=fresh]::before { background: #58c08a; }
+.alpha-notice[data-tone=late]::before { background: #e0b354; }
+.alpha-notice[data-tone=down]::before { background: #e2705f; }
+.alpha-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.alpha-bar button, .alpha-panel button, .alpha-panel a.alpha-button { font: inherit; color: #e8e4d8; background: #1a2530; border: 1px solid #34424f; border-radius: 6px; padding: 7px 12px; min-height: 36px; cursor: pointer; text-decoration: none; }
+.alpha-bar button:hover, .alpha-panel button:hover { background: #223040; }
+.alpha-bar button:focus-visible, .alpha-panel button:focus-visible, .alpha-panel a:focus-visible { outline: 2px solid #e0b354; outline-offset: 2px; }
+.alpha-bar button[aria-pressed=true] { background: #2c3d4e; border-color: #e0b354; color: #fff; }
+.alpha-bar button:disabled { opacity: .55; cursor: default; }
+.alpha-modes { display: inline-flex; gap: 0; }
+.alpha-modes button { border-radius: 0; margin-left: -1px; }
+.alpha-modes button:first-child { border-radius: 6px 0 0 6px; margin-left: 0; }
+.alpha-modes button:last-child { border-radius: 0 6px 6px 0; }
+.alpha-message { flex-basis: 100%; margin: 0; color: #e0b354; }
+.alpha-message:empty { display: none; }
+.alpha-panel { border: 1px solid #34424f; border-radius: 10px; background: #10171f; color: #e8e4d8; padding: 0; width: min(720px, calc(100vw - 24px)); max-height: min(86dvh, 820px); }
+.alpha-panel::backdrop { background: rgba(4, 8, 12, .62); }
+.alpha-panel header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #23303c; position: sticky; top: 0; background: #10171f; }
+.alpha-panel h2 { margin: 0; font-size: 17px; font-weight: 600; }
+.alpha-panel h3 { margin: 18px 0 6px; font-size: 14px; font-weight: 600; color: #c5cbd1; }
+.alpha-panel-body { padding: 14px 18px 18px; font-size: 14.5px; line-height: 1.6; }
+.alpha-panel p { margin: 0 0 8px; max-width: 68ch; }
+.alpha-panel ul { margin: 0; padding-left: 18px; }
+.alpha-record-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.alpha-record-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; align-items: center; padding: 10px 12px; border: 1px solid #23303c; border-radius: 8px; }
+.alpha-record-list small { grid-column: 1; color: #98a2ac; }
+.alpha-record-list .alpha-row-actions { grid-column: 2; grid-row: 1 / span 2; display: flex; gap: 6px; }
+.alpha-meta { color: #98a2ac; font-size: 13px; }
+.alpha-frozen { border-left: 3px solid #e0b354; padding-left: 10px; color: #d9c9a0; }
+
+/* Profile: what this run shape does not connect is taken off the screen instead of shown as a failed read.
+   Research and Portfolio need market, holdings and learning stores that only the personal run shape has. */
+.alpha-profile .gf-nav button[data-section=Research], .alpha-profile .gf-nav button[data-section=Portfolio],
+.alpha-profile .gf-tabbar button[data-section=Research], .alpha-profile .gf-tabbar button[data-section=Portfolio],
+.alpha-profile .gf-strip, .alpha-profile .gf-index, .alpha-profile .gf-chip[data-filter=market],
+.alpha-profile .gf-detail .gf-block:has(> .gf-context) { display: none !important; }
+.alpha-profile .global-briefing.gb-field .gf-tabbar { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 640px) { .alpha-bar { padding: 8px 12px; font-size: 13px; } .alpha-record-list li { grid-template-columns: 1fr; } .alpha-record-list .alpha-row-actions { grid-column: 1; grid-row: auto; } }

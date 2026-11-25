@@ -5,3 +5,5 @@ dist-evidence-desk/
 .env.*
 !.env.example
 publication-output/
+dist-alpha/
+alpha-data/
