@@ -13,7 +13,7 @@
 Node.js 24와 npm, 패키지 registry 네트워크가 필요합니다. 원본 lockfile과 vendor 보안 패치를 보존합니다.
 
     npm ci
-    npm run build:evidence-desk
+    npm run verify:demo
     python3 publication/prepare.py dist-evidence-desk --source-commit "$(git rev-parse HEAD)" --fresh-build
     python3 -m http.server 4187 --bind 127.0.0.1 --directory dist-evidence-desk
 
@@ -56,6 +56,8 @@ SOURCE_MANIFEST.json은 원본 입력과 포장 파일을 구분합니다. packa
 
 자료 기준은 2026-10-05 11:00 KST로 고정됩니다. 기기 현재 시각이나 브리프 저장 시각은 관측 시각을 갱신하지 않습니다. 자료 요약과 핵심 미확인 내용을 함께 표시하며 현재 사건과 저장 사본의 안내를 각각의 보기 상태에 연결합니다. 기존 저장 기록의 날짜·내용·형식은 변경하지 않습니다.
 
-검사: `npm run test:feedback`, `npm run typecheck:feedback`, `python3 tests/publication-provenance.test.py`, `npm run build:evidence-desk`.
+정상 설치 후 전체 데모 검증: `npm ci` → `npm run verify:demo`. Node.js 24, npm, Python 3이 필요합니다. TypeScript 앱·worker 검사, 기존 표시/저장 회귀, publication provenance, 정적 빌드와 실제 빌드 파일의 검사 포함 여부를 순서대로 확인합니다. 게시나 브라우저 재검수는 실행하지 않습니다.
 
-변경 경로의 strict 타입 검사는 통과했습니다. 원본 공개 snapshot의 전체 tsconfig에는 제외된 운영 Convex/history 타입 관련 오류 12건이 있으며, 동일 설치에서 기준 snapshot과 이번 변경의 진단이 일치했습니다. 이를 전체 타입 검사 통과로 계산하지 않습니다. 이 공개 저장소에는 실행되는 CI workflow가 없습니다. WebGL 장애 경로와 실제 Fold/터치, 외부 사용자 효용은 여전히 미검증입니다.
+`typecheck:feedback`은 변경 범위의 회귀 검사로 유지합니다. 실제 demo dependency graph 전체는 `typecheck:demo`로 검사합니다. [12건의 분류·검사 범위·root tsconfig와의 차이](docs/DEMO_VERIFICATION.md)를 확인하세요. root tsconfig는 원래의 넓은 src 경로를 진단하므로 데모에서 대체하는 history JSON 누락 1건이 남습니다. 이를 전체 저장소 타입 검사 PASS라고 표현하지 않습니다.
+
+이 공개 저장소에는 실행되는 CI workflow가 없습니다. WebGL 장애 경로·실제 Fold/터치·외부 사용자 효용의 미검증 상태와 현재 게시 버전은 그대로 유지합니다.

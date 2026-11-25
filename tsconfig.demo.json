@@ -1,0 +1,30 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "paths": {
+      "@/features/stock-research/open-outcome-data": [
+        "demo/evidence-desk/open-outcome-not-connected.ts"
+      ],
+      "@/*": [
+        "src/*"
+      ],
+      "child_process": [
+        "src/shims/child-process.ts"
+      ],
+      "node:child_process": [
+        "src/shims/child-process.ts"
+      ],
+      "@loaders.gl/worker-utils/dist/lib/process-utils/child-process-proxy.js": [
+        "src/shims/child-process-proxy.ts"
+      ]
+    }
+  },
+  "include": [
+    "src/vite-env.d.ts",
+    "src/types/**/*.d.ts",
+    "demo/evidence-desk/entry.ts",
+    "tests/demo-client-contracts.types.ts"
+  ],
+  "exclude": []
+}

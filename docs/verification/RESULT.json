@@ -1,0 +1,50 @@
+{
+  "baseSource": "bffd7916d7d2cff7f33abeeb4a6765a0eec4f5d1",
+  "branch": "chore/demo-verification-20261116",
+  "recordedAt": "2026-11-16T02:53:05.357211+00:00",
+  "environment": {
+    "node": "v24.18.1",
+    "npm": "11.16.0",
+    "python": "Python 3.14.2",
+    "os": "Ubuntu 24.04.4 LTS"
+  },
+  "normalNpmCi": "PASS; cache located on /tmp due full home filesystem",
+  "npmLsDepth0": "PASS",
+  "lockfileUnchanged": true,
+  "lockfileSha256": "a11e20f7d461061049390b8520567e21b4fe595d96340c251e94a3b8109fe332",
+  "verifyDemo": "PASS",
+  "typeDiagnostics": {
+    "main": 0,
+    "worker": 0,
+    "feedback": 0
+  },
+  "checkedLocalFiles": {
+    "main": 832,
+    "worker": 27
+  },
+  "buildModules": {
+    "main": 844,
+    "worker": 55
+  },
+  "feedbackTests": 11,
+  "verificationContractTests": 4,
+  "publicationProvenance": "PASS: one test, original/fresh-build subcases",
+  "staticBuild": "PASS",
+  "artifactManifestFiles": 398,
+  "artifactManifestSha256": "e12e0041068b84d06dcb6d946d4865e0d5ee2e9723c6827082b73bf8b6c0247f",
+  "legacyRootTsconfig": {
+    "before": 12,
+    "after": 1,
+    "remaining": "unshipped operational history JSON, replaced in the demo graph"
+  },
+  "githubActions": "NOT_CONFIGURED",
+  "browserUiRetest": "NOT_RUN; intentionally not repeated",
+  "deployment": "NOT_RUN; public site unchanged",
+  "providerCalls": 0,
+  "aiCalls": 0,
+  "limitations": [
+    "Windows/macOS execution not performed in this Linux session",
+    "Original WebGL fault-path, Fold/touch and external-user limitations unchanged",
+    "npm ci reported existing advisory/deprecation/lifecycle warnings; no security remediation or policy changes performed"
+  ]
+}

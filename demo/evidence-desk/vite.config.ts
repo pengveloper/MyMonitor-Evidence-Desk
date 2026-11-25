@@ -18,10 +18,7 @@ export default defineConfig({
     __APP_VERSION__: JSON.stringify(pkg.version), __BUILD_HASH__: JSON.stringify('synthetic-demo'),
     __CLERK_JS_VERSION__: JSON.stringify('5'), __VERCEL_ANALYTICS_ENABLED__: false,
   },
-  resolve: { alias: { './open-outcome-data': resolve(root, 'demo/evidence-desk/open-outcome-not-connected.ts'), './open-outcome-data.ts': resolve(root, 'demo/evidence-desk/open-outcome-not-connected.ts'), '@': resolve(root, 'src'),
-    child_process: resolve(root, 'src/shims/child-process.ts'),
-    'node:child_process': resolve(root, 'src/shims/child-process.ts'),
-    '@loaders.gl/worker-utils/dist/lib/process-utils/child-process-proxy.js': resolve(root, 'src/shims/child-process-proxy.ts') } },
+  resolve: { alias: Object.fromEntries(Object.entries(JSON.parse(readFileSync(resolve(root, 'tsconfig.demo.json'), 'utf8')).compilerOptions.paths as Record<string, string[]>).map(([key, paths]) => [key.replace(/\/\*$/, ''), resolve(root, paths[0]!.replace(/\/\*$/, ''))])) },
   worker: { format: 'es', plugins: () => [notices.collector('worker')] },
   build: { target: 'es2022', outDir: resolve(root, 'dist-evidence-desk'), emptyOutDir: true, reportCompressedSize: false,
     rollupOptions: { input: { desk: resolve(root, 'demo/evidence-desk/index.html'), comparison: resolve(root, 'demo/evidence-desk/comparison.html') } } },
@@ -35,6 +32,8 @@ export default defineConfig({
       return code.replace("url('/textures/earth-blue-marble.jpg')", "url('/demo-assets/land-ocean.svg')");
     },
     closeBundle() {
+      mkdirSync(resolve(root, 'node_modules/.cache'), { recursive: true });
+      writeFileSync(resolve(root, 'node_modules/.cache/demo-build-scope.json'), JSON.stringify(notices.sourceModules(), null, 2));
       const out = resolve(root, 'dist-evidence-desk');
       const assets = JSON.parse(readFileSync(resolve(root, 'demo/evidence-desk/assets.json'), 'utf8'));
       const copy = (source: string, output: string) => { mkdirSync(dirname(resolve(out, output)), { recursive: true }); cpSync(resolve(root, source), resolve(out, output)); };

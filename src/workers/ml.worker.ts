@@ -1,3 +1,6 @@
+/// <reference lib="webworker" />
+declare const self: DedicatedWorkerGlobalScope;
+
 /**
  * ML Web Worker for ONNX inference using @xenova/transformers
  * Handles embeddings, sentiment analysis, summarization, and NER

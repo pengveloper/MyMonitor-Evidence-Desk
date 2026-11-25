@@ -584,7 +584,7 @@ async function loadOpenOutcomeReplay(overlay: HTMLElement, generation: number): 
   if (!(host instanceof HTMLElement)) return;
   try {
     const [{ loadOpenOutcomeArtifact }, { renderOpenOutcomeReplay }] = await Promise.all([
-      import('./open-outcome-data.ts'),
+      import('@/features/stock-research/open-outcome-data'),
       import('./open-outcome-replay-view.ts'),
     ]);
     const artifact = await loadOpenOutcomeArtifact();
