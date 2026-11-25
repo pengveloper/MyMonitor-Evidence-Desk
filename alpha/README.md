@@ -58,6 +58,8 @@ Docker:
     npm run alpha:build
     python3 -m http.server 4312 --bind 127.0.0.1 --directory dist-alpha
 
+공개 시범으로 올린 같은 빌드: https://pengveloper.github.io/MyMonitor-Evidence-Desk/ (GitHub Pages, `alpha-v*` 태그나 수동 실행으로만 갱신). 정적 파일만 올리고 수집 API·저장 자료·서버 코드는 포함하지 않습니다.
+
 기본은 합성 자료입니다. 상단의 **USGS 실제 자료**를 누르면 브라우저가 USGS에서 직접 받습니다. MyMonitor 서버를 거치지 않습니다. 실제 자료 버튼 없이 합성 자료만 제공하려면 `ALPHA_DEMO_LIVE=0 npm run alpha:build`로 빌드합니다.
 
 ## 검증

@@ -1,0 +1,62 @@
+# Publishes the alpha's public demo profile (synthetic scenario, or USGS read directly by the browser)
+# to GitHub Pages. It runs only when started by hand or by an alpha release tag, so every published
+# build is a deliberate one. The existing Evidence Desk demo is deployed elsewhere and is not touched.
+# The self-hosted collection API is never part of this build: Pages serves static files only.
+name: alpha-pages
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['alpha-v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: alpha-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: build the public demo profile
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: verify:alpha (types, tests, build, bundle audit)
+        run: npm run verify:alpha
+      - name: Build the demo profile that is published
+        run: npm run alpha:build
+      - name: The published files are the demo profile and nothing else
+        run: |
+          set -euo pipefail
+          test "$(jq -r .profile dist-alpha/alpha-profile.json)" = demo
+          for f in index.html LICENSE NOTICE.md THIRD_PARTY_NOTICES.txt; do test -f "dist-alpha/$f"; done
+          # No server code, stored data or source maps in the artifact.
+          test -z "$(find dist-alpha -name '*.map' -o -name 'events.json' -o -name '*.ts' | head -1)"
+          if grep -rIil -E 'mymonitor\.stream|tossinvest|eodhd|api_token=' dist-alpha; then echo 'private operation names in the artifact'; exit 1; fi
+          du -sh dist-alpha
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist-alpha
+
+  deploy:
+    name: deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

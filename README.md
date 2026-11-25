@@ -43,7 +43,7 @@ Node.js 24와 npm, 패키지 registry 네트워크가 필요합니다. 원본 lo
 
 시작: `npm ci && npm run alpha:build && npm run alpha:start` → http://127.0.0.1:4310 · 검증: `npm run verify:alpha`
 
-이 Alpha를 공개 사이트에 올리는 것과 새 릴리스 발행은 별도 결정입니다. 기존 공개 사이트는 이 변경으로 바뀌지 않습니다.
+**공개 시범(Alpha)**: https://pengveloper.github.io/MyMonitor-Evidence-Desk/ — 공개 데모 형태만 올립니다(합성 자료, 또는 브라우저가 USGS에서 직접 받는 지진 자료). 수집 API는 없습니다. `alpha-v*` 태그나 수동 실행으로만 갱신합니다([alpha-pages](.github/workflows/alpha-pages.yml)). 위의 기존 합성 평가판 주소와 배포는 그대로입니다.
 
 ## 출처와 기여
 
