@@ -66,6 +66,8 @@ Docker:
 
 타입 검사 → 테스트 → 빌드 → 번들 점검(개인 운영의 주소·제공자·키 이름·원격 측정이 들어가지 않았는지) → 서버가 지어낸 피드를 수집·저장·제공하는지를 네트워크 없이 확인합니다. 실제 USGS 수신은 이 명령에 포함하지 않으며 `npm run alpha:collect`로 따로 확인합니다.
 
+GitHub Actions의 `alpha` 워크플로(`.github/workflows/alpha.yml`)는 깨끗한 checkout에서 위 명령과 기존 Evidence Desk 데모 검증(`npm run verify:demo`)을 실행한 뒤, 자체 설치를 시작해 실제 USGS 수집 한 번과 60초 제한을 확인하고, Docker 형태를 빌드해 실제 수집 → 재시작 → 컨테이너 재생성 뒤 저장 유지, 토큰 없이 컨테이너 밖에서 온 수집 요청 거부, 비특권 사용자 실행을 확인합니다.
+
 ## 화면 코드의 출처
 `src/features/global-briefing/field/`는 개인 운영 MyMonitor와 같은 파일입니다. 어느 판과 같은지는 [FIELD_SOURCE.json](FIELD_SOURCE.json)에 파일별 SHA-256으로 적었습니다. 이 Alpha는 그 파일을 고치지 않고, 프로필 스타일(`app/alpha.css`)과 자료 어댑터(`app/data.ts`)로 실행 형태의 차이를 표현합니다.
 
