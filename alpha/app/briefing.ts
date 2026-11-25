@@ -10,10 +10,10 @@ import type { QuakeRecord } from '../shared/usgs.ts';
 export const isHighConcern = (record: QuakeRecord) => record.magnitude >= 6 || record.tsunami || record.alert === 'orange' || record.alert === 'red';
 
 const ALERT_KO: Record<string, string> = { green: '녹색', yellow: '황색', orange: '주황', red: '적색' };
-function publishedFacts(record: QuakeRecord): string[] {
+function publishedFacts(record: QuakeRecord, source: string): string[] {
   return [
     record.depthKm === null ? '진원 깊이는 발표되지 않았습니다.' : `진원 깊이 ${record.depthKm}km로 발표됐습니다.`,
-    record.tsunami ? 'USGS가 쓰나미 관련 표시를 붙였습니다. 실제 경보 여부는 해당 기관 발표로 확인해야 합니다.' : 'USGS 자료에 쓰나미 관련 표시는 없습니다.',
+    record.tsunami ? `${source} 자료에 쓰나미 관련 표시가 있습니다. 실제 경보 여부는 해당 기관 발표로 확인해야 합니다.` : `${source} 자료에 쓰나미 관련 표시는 없습니다.`,
     ...(record.alert ? [`PAGER 경보 단계: ${ALERT_KO[record.alert] ?? record.alert}`] : []),
     record.reviewStatus === 'reviewed' ? '분석관이 검토한 값입니다.' : record.reviewStatus === 'automatic' ? '자동 산출 값이며 검토 뒤 규모와 위치가 바뀔 수 있습니다.' : '검토 상태는 발표되지 않았습니다.',
   ];
@@ -44,7 +44,7 @@ export function briefingFromRecords(input: BriefingInput): BriefingUpdate {
   const anchors: Record<string, BriefingAnchor> = { ...input.extraAnchors };
   for (const entry of model.entries) {
     const record = byId.get(entry.id); if (!record) continue;
-    entry.details.mainChanges = publishedFacts(record);
+    entry.details.mainChanges = publishedFacts(record, input.sourceLabel ?? 'USGS');
     anchors[entry.id] = { latitude: record.latitude, longitude: record.longitude, ...(input.fetchedAt ? { fetchedAt: input.fetchedAt } : {}) };
   }
   return { model, anchors, ...(input.scenario ? { scenario: true } : {}) };
