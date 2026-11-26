@@ -1,7 +1,0 @@
-.candidate-review { border: 2px solid var(--accent, #24776b); }
-.candidate-review p, .candidate-review li, .candidate-review td { overflow-wrap: anywhere; }
-.candidate-review select { max-width: 100%; }
-.candidate-review section { margin-block: 1rem; }
-.candidate-review table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-.candidate-review th, .candidate-review td { text-align: left; padding: .55rem .35rem; border-bottom: 1px solid #9ba9a744; font-size: .95rem; }
-.candidate-review details { margin-block: .7rem; }
